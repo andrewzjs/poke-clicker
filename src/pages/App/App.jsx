@@ -17,8 +17,8 @@ export default function App() {
             <>
                   <h1> home </h1>
                 <Routes>
-                    <Route path='/orders/new' element={ <NewOrderPage /> } />
-                    <Route path='/orders' element={ <OrderHistoryPagePage /> } /> 
+                    <Route path='/pokedex' element={ <PokedexPage /> } />
+                    <Route path='/playerlist' element={ <PlayerListPage /> } /> 
                 </Routes>
             </>
                 : 
