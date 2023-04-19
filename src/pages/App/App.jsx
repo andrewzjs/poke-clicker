@@ -2,9 +2,9 @@ import { useState } from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/usersService';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
+import PokedexPage from '../PokedexPage/PokedexPage';
 import AuthPage from '../AuthPage/AuthPage';
-import OrderHistoryPagePage from '../OrderHistoryPage/OrderHistoryPage';
+import PlayerListPage from '../PlayerListPage/PlayerListPage';
 import NavBar from '../../components/NavBar/NavBar';
 
 export default function App() {
@@ -15,9 +15,10 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
             { user ? 
             <>
+                  <h1> home </h1>
                 <Routes>
-                    <Route path='/orders/new' element={ <NewOrderPage /> } />
-                    <Route path='/orders' element={ <OrderHistoryPagePage /> } /> 
+                    <Route path='/pokedex' element={ <PokedexPage /> } />
+                    <Route path='/playerlist' element={ <PlayerListPage /> } /> 
                 </Routes>
             </>
                 : 
