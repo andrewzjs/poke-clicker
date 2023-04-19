@@ -1,6 +1,6 @@
 import { checkToken } from "../../utilities/usersService";
 
-export default function OrderHistoryPagePage() {  
+export default function PlayerListPage() {  
     async function handleCheckToken(evt) {
         const expDate = await checkToken()
         alert (expDate)

@@ -9,9 +9,10 @@ export default function NavBar({ user, setUser }) {
 
     return (
         <nav>
-            <NavLink to="/orders">Order History</NavLink>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/pokedex">Pokedex</NavLink>
             &nbsp; | &nbsp;
-            <NavLink to="/orders/new">New Order</NavLink>
+            <NavLink to="/playerlist">Player List</NavLink>
             &nbsp; { user && <p>Welcome, {user.name}</p> }
             &nbsp; <Link to="" onClick={handleLogOut}>Log Out</Link>
         </nav>
