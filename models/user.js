@@ -11,7 +11,7 @@ const pokedexSchema = new Schema({
     },
     pokemonType: {
         type: String
-    },
+    }, 
     dateCaught: {
         type: Date
     }
@@ -37,7 +37,7 @@ const userSchema = new Schema({
         minLength: 3,
         required: true,
     },
-    pokedex:[pokedexSchema]
+    pokedex: [pokedexSchema]
 }, {
     timestamps: true,
     toJSON: {

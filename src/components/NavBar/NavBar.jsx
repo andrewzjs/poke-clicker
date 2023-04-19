@@ -10,6 +10,7 @@ export default function NavBar({ user, setUser }) {
     return (
         <nav>
             <NavLink to="/">Home</NavLink>
+            &nbsp; | &nbsp;
             <NavLink to="/pokedex">Pokedex</NavLink>
             &nbsp; | &nbsp;
             <NavLink to="/playerlist">Player List</NavLink>

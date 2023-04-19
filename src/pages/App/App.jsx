@@ -15,10 +15,10 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
             { user ? 
             <>
+                  <h1> home </h1>
                 <Routes>
-                    <Route path='/pokedex' element={ <PokedexPage /> } />
-                    <Route path='/playerlist' element={ <PlayerListPage /> } /> 
-                    
+                    <Route path='/orders/new' element={ <NewOrderPage /> } />
+                    <Route path='/orders' element={ <OrderHistoryPagePage /> } /> 
                 </Routes>
             </>
                 : 

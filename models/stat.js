@@ -14,11 +14,11 @@ const statSchema = new Schema({
         type: Number,
         default: 1
     },
-    defense: {
+    defense:{
         type: Number,
         default: 1
     },
-    specialAttack: {
+    specialAttack:{
         type: Number,
         default: 1
     },
@@ -30,9 +30,9 @@ const statSchema = new Schema({
         type: Number,
         default: 1
     },
-    pokemon: { type: Schema.Types.ObjectId, ref: 'Pokemon' }
+    pokemon: {type: Schema.Types.ObjectId, ref: "Pokemon"}
 }, {
-    timestamps: true
+    timestamps: true,
 })
 
 module.exports = mongoose.model('Stat', statSchema)

@@ -5,7 +5,8 @@ const moveSchema = new Schema({
     move: String,
     power: Number,
     accuracy: Number,
-    moveType: String,
+    moveType:  String,
+
 })
 
 const pokemonSchema = new Schema({
@@ -14,10 +15,10 @@ const pokemonSchema = new Schema({
     },
     pokemonType: {
         type: String
-    },
+    }, 
     dateCaught: {
         type: Date,
-        default: Date.now()
+        default: Date.now
     },
     isShiny: {
         type: Boolean,
@@ -27,8 +28,7 @@ const pokemonSchema = new Schema({
         type: String
     },
     moves: [moveSchema],
-    user: { type: Schema.Types.ObjectId, ref: 'User' }
-
+    user: {type: Schema.Types.ObjectId, ref: "User"}
 }, {
     timestamps: true,
 })
