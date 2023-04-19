@@ -16,6 +16,9 @@ export default function NavBar({ user, setUser }) {
             <NavLink to="/playerlist">Player List</NavLink>
             &nbsp; | &nbsp;
            <NavLink to="" onClick={handleLogOut}>Log Out</NavLink>
+            &nbsp; | &nbsp;
+           <NavLink to="" onClick={handleLogOut}>Log Out</NavLink>
+         
         </nav>
     )
 }
