@@ -14,8 +14,9 @@ export default function NavBar({ user, setUser }) {
             <NavLink to="/pokedex">Pokedex</NavLink>
             &nbsp; | &nbsp;
             <NavLink to="/playerlist">Player List</NavLink>
-            &nbsp; { user && <p>Welcome, {user.name}</p> }
-            &nbsp; <Link to="" onClick={handleLogOut}>Log Out</Link>
+            &nbsp; | &nbsp;
+           <NavLink to="" onClick={handleLogOut}>Log Out</NavLink>
+         
         </nav>
     )
 }

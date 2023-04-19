@@ -3,14 +3,23 @@ const Schema = mongoose.Schema
 
 const moveSchema = new Schema({
     move: String,
-    power: Number,
-    accuracy: Number,
+    power: { 
+        type: Number,
+        default: 0
+    },
+    accuracy: { 
+        type: Number,
+        default: 0
+    },
     moveType:  String,
 
 })
 
 const pokemonSchema = new Schema({
     name: {
+        type: String
+    },
+    sprite: {
         type: String
     },
     pokemonType: {
