@@ -9,3 +9,7 @@ export function createPokemon(newPokemon){
 export function getAll() {
     return sendRequest(BASE_URL)
 }
+
+export function deletePokemon(pokeId){
+    return sendRequest(`${BASE_URL}/delete/${pokeId}`, 'DELETE' )
+}
