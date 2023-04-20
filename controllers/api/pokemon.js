@@ -10,8 +10,7 @@ async function create(req, res) {
     try {
         const newPokemon = req.body.newPokemon
         newPokemon.user = req.user._id
-        const savePokemon = new Pokemon(newPokemon)
-        savePokemon.save()
+        const savePokemon = await Pokemon.create(newPokemon)
         res.json(savePokemon)
     } catch(err) {
         res.status(400).json(err)
@@ -20,9 +19,9 @@ async function create(req, res) {
 
 async function index(req, res){
     try {
-        const p = await Pokemon.find({})
+        const p = await Pokemon.find({user: req.user._id})
         console.log(p)
-        res.json()
+        res.json(p)
     } catch (error) {
         res.status(400).json(err)
     }

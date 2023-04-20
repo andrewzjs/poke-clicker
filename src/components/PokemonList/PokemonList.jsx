@@ -8,7 +8,7 @@ export default function PokemonList ({ pokemon }) {
                 Pokemon List
             </div>
             <div>
-                { pokemon.name }
+                { pokemon[0]?.name }
             </div>
         </>
     )

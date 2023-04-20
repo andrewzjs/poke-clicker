@@ -8,8 +8,8 @@ export default function Game({ handleAddPokemon }) {
     const [pokemon, setPokemon] = useState([])
 
     async function handleAddPokemon(newPokemon){
-        const pokemon = await pokemonAPI.createPokemon(newPokemon);
-        setPokemon(pokemon)
+        const pokemonFromDatabase = await pokemonAPI.createPokemon(newPokemon);
+        setPokemon([...pokemon, pokemonFromDatabase])
     }
 
     useEffect(function() {
