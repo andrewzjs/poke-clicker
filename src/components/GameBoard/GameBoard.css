@@ -41,6 +41,24 @@ body {
     }
   }
 
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-1px);
+    }
+    50% {
+      transform: translateX(1px);
+    }
+    75% {
+      transform: translateX(-1px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -72,6 +90,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     scale: 160%;
+    animation: shake 3s infinite;
   }
 
   
