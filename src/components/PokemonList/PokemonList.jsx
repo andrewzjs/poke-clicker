@@ -14,7 +14,7 @@ export default function PokemonList ({ pokemon }) {
             </thead>
             <tbody>
             {pokemon.map((p, index) => (
-                <PokemonListItem pokemon={p} key={index} index={index} />
+                <PokedexListItem pokemon={p} key={index} handleRemovePokemon={handleRemovePokemon} />
             ))}
             </tbody>
           </table> 

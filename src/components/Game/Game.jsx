@@ -14,13 +14,18 @@ export default function Game({ handleAddPokemon }) {
         setPokemon([...pokemon, pokemonFromDatabase])
     }
 
+    async function handleRemovePokemon(pokeId){
+        const remainingPokemon = await pokemonAPI.deletePokemon(pokeId)
+        setPokemon(remainingPokemon)
+        console.log('remove pokemon', pokeId)
+    }
+
     useEffect(function() {
         async function getPokemon() {
             const pokemon = await pokemonAPI.getAll()
             setPokemon(pokemon)
         }
         getPokemon()
-        console.log('use effect happening')
     }, [])
     
     return (
@@ -29,7 +34,7 @@ export default function Game({ handleAddPokemon }) {
                 <GameBoard handleAddPokemon={handleAddPokemon} />
             </div>
             <div className="pokemonlist-area">
-                <PokemonList pokemon={ pokemon } setPokemon={ setPokemon } />
+                <PokemonList pokemon={ pokemon } setPokemon={ setPokemon } handleRemovePokemon={handleRemovePokemon} />
             </div>
         </div>
 
