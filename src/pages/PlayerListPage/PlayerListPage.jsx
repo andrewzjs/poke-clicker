@@ -8,7 +8,6 @@ export default function PlayerListPage() {
     
     return (
     <>
-        <h1>Player List Page</h1>
         <button onClick={handleCheckToken}>
             Check When My Login Expires
         </button>

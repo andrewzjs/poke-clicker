@@ -23,7 +23,7 @@ const pokemonSchema = new Schema({
         type: String
     },
     pokemonType: {
-        type: String
+        type: [String]
     }, 
     dateCaught: {
         type: Date,

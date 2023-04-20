@@ -1,5 +1,9 @@
 body {
-  background-color: #5e687c;
+  background-color: #4A4056;
+  background-image: url(https://cdn.wallpapersafari.com/4/38/mOfcQ2.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  
 }
 
 .App {
@@ -40,3 +44,5 @@ body {
     transform: rotate(360deg);
   }
 }
+
+

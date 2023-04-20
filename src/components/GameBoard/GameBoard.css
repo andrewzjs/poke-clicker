@@ -1,5 +1,5 @@
 body {
-    background-color: #5e687c;
+  background-color: #4A4056;
   }
   
   .App {
@@ -46,10 +46,13 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     margin: 0 auto;
-    max-width: 450px;
+    max-width: 460px;
+    min-width: 460px;
     background-image: url(../../../images/env-1.png) ;
     background-repeat: no-repeat;
     background-size: cover;
+    
+    
   }
 
   #board-sprite {
@@ -70,3 +73,5 @@ body {
     background-repeat: no-repeat;
     scale: 160%;
   }
+
+  

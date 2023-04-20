@@ -1,6 +1,6 @@
 export default function PokedexPage() {  
     return (
-      <h1>Pokedex Page</h1>
+      <h1></h1>
     );
   }
   
