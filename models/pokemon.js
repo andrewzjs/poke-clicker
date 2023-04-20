@@ -23,7 +23,7 @@ const pokemonSchema = new Schema({
         type: String
     },
     pokemonType: {
-        type: String
+        type: [String]
     }, 
     dateCaught: {
         type: Date,
@@ -37,7 +37,7 @@ const pokemonSchema = new Schema({
         type: String
     },
     moves: [moveSchema],
-    user: {type: Schema.Types.ObjectId, ref: "User"}
+    user: { type: Schema.Types.ObjectId, ref: "User" }
 }, {
     timestamps: true,
 })
