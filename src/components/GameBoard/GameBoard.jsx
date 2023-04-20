@@ -2,7 +2,7 @@ import './GameBoard.css';
 import { useState } from "react";
 import axios from 'axios';
 
-export default function GameBoard({ handleAddPokemon }) {
+export default function GameBoard({ handleAddPokemon}) {
 
     function getRndInteger() {
         return Math.floor(Math.random() * 150 ) + 1;
@@ -47,9 +47,18 @@ export default function GameBoard({ handleAddPokemon }) {
                 sprite: sprite,
                 pokemonType: pokemonType,
                 ability: ability,
-                moves: moveDetails
+                moves: moveDetails,
+                dateCaught: Date.now()
             }
-            handleAddPokemon(newPokemon)
+            const newPokedexEntry = {
+                name: name,
+                sprite: sprite,
+                pokemonType: pokemonType,
+                ability: ability,
+                dateCaught: Date.now()
+            }
+            handleAddPokemon(newPokemon, newPokedexEntry)
+            console.log( newPokedexEntry.name, "'s Pokedex Entry: ", newPokedexEntry)
         } catch(err) {
             console.log(err)
         }
