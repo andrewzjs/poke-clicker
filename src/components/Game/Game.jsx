@@ -2,7 +2,9 @@ import './Game.css';
 import * as pokemonAPI from '../../utilities/pokemonApi'
 import { useState, useEffect } from "react";
 import GameBoard from '../GameBoard/GameBoard'
+import PokedexList from '../PokedexList/PokedexList'
 import PokemonList from '../PokemonList/PokemonList'
+
 
 export default function Game({ handleAddPokemon }) {
     const [pokemon, setPokemon] = useState([])
@@ -27,12 +29,14 @@ export default function Game({ handleAddPokemon }) {
     }, [])
     
     return (
-        <>
-            <button class="button"> grassy terrain</button>
-            <GameBoard handleAddPokemon={handleAddPokemon} />
-            <div>
+        <div className="home-area">
+            <div className="gameboard-area">
+                <GameBoard handleAddPokemon={handleAddPokemon} />
+            </div>
+            <div className="pokemonlist-area">
                 <PokemonList pokemon={ pokemon } setPokemon={ setPokemon } handleRemovePokemon={handleRemovePokemon} />
             </div>
-        </>
+        </div>
+
     )
 }

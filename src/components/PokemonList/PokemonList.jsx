@@ -1,13 +1,24 @@
 import { useState, useEffect } from "react";
 import * as pokemonAPI from '../../utilities/pokemonApi'
-import PokedexListItem from "../PokedexListItem/PokedexListItem";
+import PokemonListItem from "../PokemonListItem/PokemonListItem";
+import './PokemonList.css'
 
-export default function PokemonList ({ pokemon, handleRemovePokemon }) {
-    return(
-        <div>
-            { pokemon.map((p, idx) => (
-                <PokedexListItem pokemon={p} key={idx} handleRemovePokemon={handleRemovePokemon} />
+export default function PokemonList ({ pokemon }) {
+
+    return (
+        <>
+        <div class="table-container">
+          <table>
+            <thead>
+              <th> Pokemon</th>
+            </thead>
+            <tbody>
+            {pokemon.map((p, index) => (
+                <PokedexListItem pokemon={p} key={index} handleRemovePokemon={handleRemovePokemon} />
             ))}
+            </tbody>
+          </table> 
         </div>
+        </>
     )
 }

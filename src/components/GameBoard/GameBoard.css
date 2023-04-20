@@ -1,5 +1,5 @@
 body {
-    background-color: #5e687c;
+  background-color: #4A4056;
   }
   
   .App {
@@ -41,15 +41,36 @@ body {
     }
   }
 
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-1px);
+    }
+    50% {
+      transform: translateX(1px);
+    }
+    75% {
+      transform: translateX(-1px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     margin: 0 auto;
-    max-width: 450px;
+    max-width: 460px;
+    min-width: 460px;
     background-image: url(../../../images/env-1.png) ;
     background-repeat: no-repeat;
     background-size: cover;
+    
+    
   }
 
   #board-sprite {
@@ -69,4 +90,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     scale: 160%;
+    animation: shake 3s infinite;
   }
+
+  
