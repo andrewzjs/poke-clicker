@@ -18,7 +18,6 @@ export default function NavBar({ user, setUser }) {
             <NavLink to="/playerlist"><i class="fa fa-users" aria-hidden="true"></i>Player List</NavLink>
             &nbsp;  &nbsp;
            <NavLink to="" onClick={handleLogOut}><i class="fa fa-sign-out" aria-hidden="true"></i>Log Out</NavLink>
-         
         </nav>
     )
 }

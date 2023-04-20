@@ -17,10 +17,10 @@ export default function App() {
             { user ? 
             <>
                 <Routes>
+                    <Route path='/' element={ <Game /> } /> 
                     <Route path='/pokedex' element={ <PokedexPage /> } />
                     <Route path='/playerlist' element={ <PlayerListPage /> } /> 
                 </Routes>
-                <Game user={user} setUser= {setUser} />
             </>
                 : 
                 <AuthPage setUser={setUser} /> 

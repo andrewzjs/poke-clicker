@@ -1,20 +1,28 @@
-import axios from "axios"
-
+const User = require('../../models/user')
+const Pokemon = require('../../models/pokemon')
 
 module.exports = {
-    newPokemon,
+    index,
+    create,
 }
 
-async function newPokemon(req, res) {
+async function create(req, res) {
     try {
-        const response = await axios.get("https://pokeapi.co/api/v2/pokemon/ditto")
-        console.log(response.data)
-        console.log(Object.values(response.data)[1])
-        const pokemonTypes = await PokemonType.find({})
-        console.log(pokemonTypes)
-        res.render("pokemons/new", {pokemons: response.data.results})
-
+        const newPokemon = req.body.newPokemon
+        newPokemon.user = req.user._id
+        const savePokemon = await Pokemon.create(newPokemon)
+        res.json(savePokemon)
     } catch(err) {
-        console.log(err)
+        res.status(400).json(err)
+    }
+}
+
+async function index(req, res){
+    try {
+        const p = await Pokemon.find({user: req.user._id})
+        console.log(p)
+        res.json(p)
+    } catch (error) {
+        res.status(400).json(err)
     }
 }
