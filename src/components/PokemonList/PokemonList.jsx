@@ -3,7 +3,7 @@ import * as pokemonAPI from '../../utilities/pokemonApi'
 import PokemonListItem from "../PokemonListItem/PokemonListItem";
 import './PokemonList.css'
 
-export default function PokemonList ({ pokemon }) {
+export default function PokemonList ({ pokemon, handleRemovePokemon }) {
 
     return (
         <>
@@ -14,7 +14,7 @@ export default function PokemonList ({ pokemon }) {
             </thead>
             <tbody>
             {pokemon.map((p, index) => (
-                <PokedexListItem pokemon={p} key={index} handleRemovePokemon={handleRemovePokemon} />
+                <PokemonListItem pokemon={p} key={index} handleRemovePokemon={handleRemovePokemon} />
             ))}
             </tbody>
           </table> 
