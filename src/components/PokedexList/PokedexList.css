@@ -1,0 +1,107 @@
+@keyframes updown {
+  0% {
+    transform: translateY(-2%);
+  }
+  50% {
+    transform: translateY(2%);
+  }
+  100% {
+    transform: translateY(-2%);
+  } 
+}
+.table-container {
+    height: 360px;
+    overflow: scroll; 
+    background-image: url("https://wallpapers.com/images/hd/night-sky-8-bit-190cuporbadt1g4h.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    border-radius: 10px;
+    max-width: 410px;
+  }
+  
+  .table-container::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .table-container::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  .table-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  table {
+    width: 100%; 
+    max-width: 400px;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left; 
+    overflow-y: hidden;
+  }
+
+  th {
+    text-align: center;
+  }
+
+  td {
+    height: 80px;
+  }
+
+  #zapdos-sprite-table {
+    background-image: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/145.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    animation: updown 2s infinite;
+  }
+  #milotic-sprite-table {
+    background-image: url( https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/350.png
+    );
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    animation: updown 1s infinite;
+  }
+  #gardevoir-sprite-table {
+    background-image: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/282.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    animation: updown 1.5s infinite;
+  }
+  #salamence-sprite-table {
+    background-image: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/373.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    animation: updown 1.8s infinite;
+  }
+  #blissey-sprite-table {
+    background-image: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/242.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    animation: updown 1.8s infinite;
+  }
+
+  .pokemon-name-table {
+    width: 1px;
+  }
+
+  .button-table {
+    background-color: #8FE3FF;
+    color: black;
+    border: solid #8FE3FF;
+    max-width: 70px;
+    margin-left: 12%;
+  }
+  .button-table:hover {
+    background-color: mediumaquamarine;
+    color: black;
+    border: solid mediumaquamarine;
+  }
