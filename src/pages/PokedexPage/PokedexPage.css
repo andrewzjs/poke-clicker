@@ -1,20 +1,25 @@
 .pokedex-index {
     margin: 0 auto;
     margin-top: 2%;
-    background-color: rgba(245, 245, 245, 0.6);
-    border-radius: 20px;
+    background-color: rgba(47, 180, 241, 0.863);
+    border-radius: 12px;
     max-width: max-content;
     font-size: 14px;
     overflow: hidden;
 }
 
 .pokedex-index th, .pokedex-index td {
-    padding: 10px 15px;
-    border: 1px solid #CCC;
+    padding: 5px 15px;
+    border: 1px solid white;
+}
+
+.pokedex-index td {
+    padding: 0 15px;
 }
 
 .pokedex-index th {
-    background-color: #EDEDED;
+    background-color: rgba(245, 245, 245, 0.6);
+    border: 1px solid white;
     font-weight: bold;
 }
 
@@ -22,6 +27,6 @@
     background-color: rgba(245, 245, 245, 0.6);
 }
 
-.pokedex-index tr:hover td {
+/* .pokedex-index tr:hover td {
     animation: updown 2s infinite;
-}
+} */

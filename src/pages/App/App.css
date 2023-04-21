@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 body {
   background-color: #4A4056;
   background-image: url(https://cdn.wallpapersafari.com/4/38/mOfcQ2.png);
@@ -9,4 +11,5 @@ body {
   
 .App {
   text-align: center;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }

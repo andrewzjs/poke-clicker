@@ -5,7 +5,7 @@ import axios from 'axios';
 export default function GameBoard({ handleAddPokemon}) {
 
     function getRndInteger() {
-        return Math.floor(Math.random() * 150 ) + 1;
+        return Math.floor(Math.random() * 900 ) + 1;
     }
 
     async function generatePokemon() {
@@ -16,6 +16,7 @@ export default function GameBoard({ handleAddPokemon}) {
             const pokemonType=[]
             const ability = response.data.abilities[0].ability.name
             const moveDetails = []
+            const pokedexNum = response.data.id
             if (response.data.types.length > 1) {
                 pokemonType.push(response.data.types[0].type.name)
                 pokemonType.push(response.data.types[1].type.name)
@@ -55,8 +56,10 @@ export default function GameBoard({ handleAddPokemon}) {
                 sprite: sprite,
                 pokemonType: pokemonType,
                 ability: ability,
-                dateCaught: Date.now()
+                dateCaught: Date.now(),
+                pokedexNum: pokedexNum
             }
+            console.log(newPokedexEntry.pokedexNum)
             handleAddPokemon(newPokemon, newPokedexEntry)
         } catch(err) {
             console.log(err)
