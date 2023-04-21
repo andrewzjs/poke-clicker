@@ -21,7 +21,7 @@ async function create(req, res) {
 async function index(req, res){
     try {
         const p = await Pokemon.find({user: req.user._id})
-        res.json(p)
+        res.json(p.reverse())
     } catch (err) {
         res.status(400).json(err)
     }

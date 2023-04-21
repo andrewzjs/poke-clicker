@@ -20,6 +20,9 @@ const pokemonSchema = new Schema({
     },
     dateCaught: {
         type: Date
+    },
+    pokedexNum: {
+        type: Number
     }
 }, {
     timestamps: true,

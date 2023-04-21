@@ -4,7 +4,7 @@ nav  {
 
 header{
   background-color: #F9F9F9;
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -48,4 +48,8 @@ nav > ul > li:active {
   position: absolute;
   left: 2%;
   top: 10%;
+}
+
+.nav-icon {
+  margin-right: .5rem;
 }
