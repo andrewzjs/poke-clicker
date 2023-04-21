@@ -58,7 +58,6 @@ export default function GameBoard({ handleAddPokemon}) {
                 dateCaught: Date.now()
             }
             handleAddPokemon(newPokemon, newPokedexEntry)
-            console.log( newPokedexEntry.name, "'s Pokedex Entry: ", newPokedexEntry)
         } catch(err) {
             console.log(err)
         }

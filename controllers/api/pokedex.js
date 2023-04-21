@@ -20,7 +20,9 @@ async function create(req, res) {
 
 async function index(req, res){
     try {
-        const pokedexFromDatabase = await Pokedex.find({user: req.user._id})
+        const user = await User.findById(req.user._id)
+        const pokedexFromDatabase = user.pokedex
+        console.log("what!", pokedexFromDatabase[0])
         res.json(pokedexFromDatabase)
     } catch (err) {
         res.status(400).json(err)
