@@ -40,7 +40,7 @@ return (
 )}
       </td>
       <td>{pokemon.ability}</td>
-      <td>{pokemon.dateCaught}</td>
+      <td>{new Date(pokemon.dateCaught).toDateString()}</td>
     </tr>
   ))} 
       </tbody>

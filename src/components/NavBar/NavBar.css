@@ -49,3 +49,7 @@ nav > ul > li:active {
   left: 2%;
   top: 10%;
 }
+
+.nav-icon {
+  margin-right: .5rem;
+}
