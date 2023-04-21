@@ -5,13 +5,19 @@ const bcrypt = require('bcrypt')
 
 const SALT_ROUNDS = 6
 
-const pokedexSchema = new Schema({
+const pokemonSchema = new Schema({
     name: {
         type: String
     },
-    pokemonType: {
+    sprite: {
         type: String
+    },
+    pokemonType: {
+        type: [String]
     }, 
+    ability: {
+        type: String
+    },
     dateCaught: {
         type: Date
     }
@@ -37,7 +43,7 @@ const userSchema = new Schema({
         minLength: 3,
         required: true,
     },
-    pokedex: [pokedexSchema]
+    pokedex: [pokemonSchema]
 }, {
     timestamps: true,
     toJSON: {
