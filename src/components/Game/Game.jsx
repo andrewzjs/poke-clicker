@@ -6,7 +6,6 @@ import GameBoard from '../GameBoard/GameBoard'
 import PokedexList from '../PokedexList/PokedexList'
 import PokemonList from '../PokemonList/PokemonList'
 
-
 export default function Game({ handleAddPokemon }) {
     const [pokemon, setPokemon] = useState([])
 

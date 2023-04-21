@@ -65,12 +65,11 @@ export default function GameBoard({ handleAddPokemon}) {
 
     return (
         <>
-        <div className = "container">
-            <p style={{visibility : "hidden"}}>board</p>
-            <div id="board-sprite"></div>
-            <div id="pokemon1"  onClick={() => generatePokemon()}>
+            <div className = "board">
+                <div id="board-sprite"></div>
+                <div id="pokemon1"  onClick={() => generatePokemon()}>
+                </div>
             </div>
-        </div>
         </>
     )
 }

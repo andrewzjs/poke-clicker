@@ -1,96 +1,53 @@
 body {
   background-color: #4A4056;
-  }
-  
-  .App {
-    text-align: center;
-  }
-  
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
+}
 
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+@keyframes shake {
+  0% {
+    transform: translateX(0);
   }
-
-  @keyframes shake {
-    0% {
-      transform: translateX(0);
-    }
-    25% {
-      transform: translateX(-1px);
-    }
-    50% {
-      transform: translateX(1px);
-    }
-    75% {
-      transform: translateX(-1px);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  25% {
+    transform: translateX(-1px);
   }
-
-  .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    margin: 0 auto;
-    max-width: 460px;
-    min-width: 460px;
-    background-image: url(../../../images/env-1.png) ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-    
+  50% {
+    transform: translateX(1px);
   }
-
-  #board-sprite {
-    background-image: url(../../../images/trainer-sprite.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    scale: 180%;
-    grid-row: 4 / span 1;
-    grid-column: 4 / span 1;
-
+  75% {
+    transform: translateX(-1px);
   }
-
-  #pokemon1 {
-    grid-row: 4 /span 1;
-    grid-column: 2 /span 1;
-    background-image: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    scale: 160%;
-    animation: shake 3s infinite;
+  100% {
+    transform: translateX(0);
   }
+}
 
-  
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin: 0 auto;
+  width: 600px;
+  height: 500px;
+  background-image: url(../../../images/env-1.png) ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#board-sprite {
+  background-image: url(../../../images/trainer-sprite.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  scale: 180%;
+  grid-row: 4 / span 1;
+  grid-column: 4 / span 1;
+}
+
+#pokemon1 {
+  grid-row: 4 /span 1;
+  grid-column: 2 /span 1;
+  background-image: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  scale: 160%;
+  animation: shake 3s infinite;
+}
+

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/usersService';
 import PokedexPage from '../PokedexPage/PokedexPage';
