@@ -22,8 +22,9 @@ async function index(req, res){
     try {
         const user = await User.findById(req.user._id)
         const pokedexFromDatabase = user.pokedex
-        console.log("what!", pokedexFromDatabase[0])
-        res.json(pokedexFromDatabase)
+        const latestEntries = pokedexFromDatabase.slice(-20); 
+        console.log("what!", latestEntries)
+        res.json(latestEntries)
     } catch (err) {
         res.status(400).json(err)
     }
