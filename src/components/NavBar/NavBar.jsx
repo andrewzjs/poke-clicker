@@ -8,16 +8,26 @@ export default function NavBar({ user, setUser }) {
         setUser(null)
     }
 
-    return (
-        <nav>
-            <img src="https://i.imgur.com/ddyF4WO.png" id="navbar-logo" />
-            <NavLink to="/"><i class="fa fa-home" aria-hidden="true"></i>Home</NavLink>
-            &nbsp;  &nbsp;
-            <NavLink to="/pokedex"><i class="fa fa-book" aria-hidden="true"></i>Pokedex</NavLink>
-            &nbsp;  &nbsp;
-            <NavLink to="/playerlist"><i class="fa fa-users" aria-hidden="true"></i>Player List</NavLink>
-            &nbsp;  &nbsp;
-           <NavLink to="" onClick={handleLogOut}><i class="fa fa-sign-out" aria-hidden="true"></i>Log Out</NavLink>
-        </nav>
+    const mystyle = {
+        width: "160px",
+        height: "40px"
+    }
+
+    return ( 
+    <>
+        <header>
+            <img src="https://i.imgur.com/ddyF4WO.png" style={mystyle}/>
+            <nav>
+                <ul className='links'>
+                    <li><NavLink to="/"><i className="fa fa-home" aria-hidden="true"></i>Home</NavLink></li>
+                    <li><NavLink to="/pokedex"><i className="fa fa-book" aria-hidden="true"></i>Pokedex</NavLink></li>
+                    <li><NavLink to="/playerlist"><i className="fa fa-users" aria-hidden="true"></i>Player List</NavLink></li>
+                    <li><NavLink to="" onClick={handleLogOut}><i className="fa fa-sign-out" aria-hidden="true"></i>Log Out</NavLink></li>
+                </ul>
+            </nav>
+        </header>
+    </>
+
     )
 }
+

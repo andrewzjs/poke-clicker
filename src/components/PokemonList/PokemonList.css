@@ -9,63 +9,63 @@
       transform: translateY(-2%);
     } 
   }
-  .table-container {
-      height: 360px;
-      overflow: scroll; 
-      background-image: url("https://wallpapers.com/images/hd/night-sky-8-bit-190cuporbadt1g4h.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      color: white;
-      border-radius: 10px;
-      max-width: 410px;
-    }
-    
-    .table-container::-webkit-scrollbar {
-      width: 7px;
-      
-    }
-  
-    .table-container::-webkit-scrollbar-thumb {
-      background: #888;
-    }
-  
-    .table-container::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
-  
-    table {
-      width: 100%; 
-      max-width: 400px;
-      border-collapse: collapse;
-    }
-    
-    th, td {
-      padding: 10px;
-      overflow-y: hidden;
-    }
-  
-    th {
-      text-align: center;
-    }
-  
-    td {
-      height: 70px;
-    }
-  
- 
-    .pokemon-name-table {
-        text-align: center;
-    }
-  
-    .button-table {
-      background-color: #8FE3FF;
-      color: black;
-      border: solid #8FE3FF;
-      scale: 90%;
 
-    }
-    .button-table:hover {
-      background-color: mediumaquamarine;
-      color: black;
-      border: solid mediumaquamarine;
-    }
+.table-container {
+  height: 494px;
+  width:325px;
+  overflow: scroll; 
+  background-image: url("https://wallpapers.com/images/hd/night-sky-8-bit-190cuporbadt1g4h.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  border-radius: 10px;
+}
+  
+.table-container::-webkit-scrollbar {
+  width: 7px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+table {
+  width: 100%; 
+  max-width: 400px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  overflow-y: hidden;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+  height: 70px;
+}
+
+
+.pokemon-name-table {
+    text-align: center;
+}
+
+/* .button-table {
+  background-color: #8FE3FF;
+  color: black;
+  border: solid #8FE3FF;
+  scale: 90%;
+
+}
+.button-table:hover {
+  background-color: mediumaquamarine;
+  color: black;
+  border: solid mediumaquamarine;
+} */
