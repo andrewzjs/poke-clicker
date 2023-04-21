@@ -4,7 +4,7 @@ nav  {
 
 header{
   background-color: #F9F9F9;
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
