@@ -30,8 +30,8 @@ export default function GameBoard({ handleAddPokemon }) {
     
     useEffect(function() {
         async function generatePokemon() {
+            await fetchRandPokemon()
             setTimeout(() => {
-                fetchRandPokemon()
                 setBox(randomBox())
                 setTimeout(() => {
                     setBox(null)
@@ -62,6 +62,7 @@ export default function GameBoard({ handleAddPokemon }) {
             setPokemonSprite(sprite)
             const pokemonType=[]
             const ability = response.data.abilities[0].ability.name
+            const pokedexNum = response.data.id
             const moveDetails = []
             if (response.data.types.length > 1) {
                 pokemonType.push(response.data.types[0].type.name)
@@ -97,12 +98,14 @@ export default function GameBoard({ handleAddPokemon }) {
                 moves: moveDetails,
                 dateCaught: Date.now()
             }
+            
             const newPokedexEntry = {
                 name: name,
                 sprite: sprite,
                 pokemonType: pokemonType,
                 ability: ability,
-                dateCaught: Date.now()
+                dateCaught: Date.now(),
+                pokedexNum: pokedexNum
             }
             setNewPokemon(newPokemon)
             setNewPokedexEntry(newPokedexEntry)
