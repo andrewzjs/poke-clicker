@@ -22,32 +22,48 @@ body {
 
 .board {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   margin: 0 auto;
   width: 600px;
-  height: 500px;
+  height: 508px;
   background-image: url(../../../images/env-1.png) ;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #board-sprite {
-  background-image: url(../../../images/trainer-sprite.png);
   background-size: contain;
   background-repeat: no-repeat;
-  scale: 180%;
-  grid-row: 4 / span 1;
-  grid-column: 4 / span 1;
+  grid-row: 3 / 4;
+  grid-column: 3 / 4;
 }
 
-#pokemon1 {
-  grid-row: 4 /span 1;
-  grid-column: 2 /span 1;
-  background-image: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png");
-  background-size: contain;
+.character-sprite {
+  height: 100%;
+}
+
+.sprite > img {
+  background-size:contain;
   background-repeat: no-repeat;
-  scale: 160%;
-  animation: shake 3s infinite;
+  max-height:100%;
 }
 
+.active-wild{
+  background-color: green;
+}
+
+.wild-pokemon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wild-pokemon > img {
+  height:100%;
+
+}
+
+.wild-pokemon > img:hover {
+  background-image: radial-gradient(ellipse, #130db8, transparent 60%);
+}
