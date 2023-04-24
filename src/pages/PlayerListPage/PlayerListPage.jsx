@@ -1,16 +1,30 @@
-import { checkToken } from "../../utilities/usersService";
+import { useEffect, useState } from "react";
+import * as usersAPI from '../../utilities/usersApi'
+import PlayerCard from "../../components/PlayerCard/PlayerCard";
+
 
 export default function PlayerListPage() {  
-    async function handleCheckToken(evt) {
-        const expDate = await checkToken()
-        alert (expDate)
-    }
+    const [users, setUsers] = useState([])
     
+    useEffect(function() {
+        async function getAllUsers(){
+            const allUsers = await usersAPI.getAllUsers()
+            setUsers(allUsers)
+        }
+        getAllUsers()        
+    }, [])
+
+
     return (
     <>
-        <button onClick={handleCheckToken}>
-            Check When My Login Expires
-        </button>
+        <h1>
+            User:
+        </h1> 
+        <div>
+            {users.map((user, idx) => (
+                <PlayerCard user={user} key={idx} />
+            ))}
+        </div>
     </>
 );
 }

@@ -18,3 +18,7 @@ export function getAll() {
 export function deletePokemon(pokeId){
     return sendRequest(`${BASE_URL}/delete/${pokeId}`, 'DELETE' )
 }
+
+export function getUsersPokemon(userId){
+    return sendRequest(`${BASE_URL}/user/${userId}`, 'GET')
+}

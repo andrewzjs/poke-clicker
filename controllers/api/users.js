@@ -5,7 +5,8 @@ const bcrypt = require('bcrypt')
 module.exports = {
     create,
     login,
-    checkToken
+    checkToken,
+    show,
 }
 
 async function create (req, res) {
@@ -40,6 +41,15 @@ async function login (req, res) {
         if (!match) throw new Error ('Bad Password')
         const token = createJWT(user)
         res.status(200).json(token)
+    } catch (err) {
+        res.status(400).json(err)
+    }
+}
+
+async function show(req,res){
+    try {
+        const users = await User.find({})
+        res.json(users)
     } catch (err) {
         res.status(400).json(err)
     }

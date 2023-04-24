@@ -15,7 +15,6 @@ export default function GameBoard({ handleAddPokemon }) {
     }
 
     function randomBox(){
-        console.log('random box called')
         return Math.floor(Math.random() * 23 )
     }
 
@@ -57,7 +56,6 @@ export default function GameBoard({ handleAddPokemon }) {
     }
 
     async function fetchRandPokemon() {
-        console.log('fetch pokemon called')
         try {
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${getRndInteger()}`)
             const name = response.data.name
