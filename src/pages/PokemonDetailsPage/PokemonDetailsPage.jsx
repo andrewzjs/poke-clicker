@@ -9,6 +9,10 @@ export default function() {
     const [pokemonStats, setPokemonStats] = useState({})
     const { id } = useParams()
 
+    // async function handleRemovePokemon(id){
+    //     await pokemonAPI.deletePokemon(id)
+    // }
+
     useEffect(function() {
         async function getPokemon() {
             const pokemonFromDB = await pokemonAPI.getOne(id)
@@ -111,6 +115,7 @@ export default function() {
                 <div id="speed-name">Speed</div>
                 <div id="speed-val">{pokemonStats.speed}</div>
             </div>
+            {/* <button onClick={handleRemovePokemon}>Release</button> */}
             {/* <NavLink to="/">
                 <button>go back</button>
             </NavLink> */}
