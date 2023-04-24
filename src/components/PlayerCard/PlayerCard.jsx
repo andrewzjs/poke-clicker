@@ -10,21 +10,26 @@ export default function PlayerCard({ user }){
         async function getPokemon(){
             const usersPokemon = await pokemonAPI.getUsersPokemon(user._id)
             setPokemons(usersPokemon)
-        }      
-        getPokemon() 
+        } 
+        getPokemon()
     }, [])
     
     return (
-        <>
-            <h1>
-                {user.name}
-            </h1>
-            <div>
-                POkemon: 
-                {pokemons.map((pokemon, idx) => (
-                    <PokemonCard pokemon={pokemon} />
-                ))}
-            </div>
-        </>
+        <div className="table-div">
+            <table className="player-card">
+                <thead className="user-name">
+                    <tr>
+                        <th colspan="3"><h4>{user.name}'s Pokemon</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr className="">
+                        {pokemons.map((pokemon, idx) => (
+                        <PokemonCard pokemon={pokemon} />
+                    ))}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     )
 }

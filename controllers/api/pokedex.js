@@ -1,6 +1,5 @@
 const User = require('../../models/user')
 
-
 module.exports = {
     index,
     create,
@@ -9,10 +8,7 @@ module.exports = {
 async function create(req, res) {
     try {
         const user = await User.findById(req.user._id)
-        console.log('create controller')
-        console.log(user)
         user.pokedex.push(req.body.newPokedexEntry)
-        console.log(req.body.newPokedexEntry)
         await user.save()
         res.json("")
     } catch(err) {

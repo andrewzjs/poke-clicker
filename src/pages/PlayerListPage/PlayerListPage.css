@@ -1,0 +1,30 @@
+.table-div {
+    overflow-x: auto;
+    padding:10px;
+    width: 75%;
+    margin:auto;
+}
+
+.player-card{
+    width: 75%;
+    margin: auto;
+    background-color: grey;
+    border-radius: 10px;
+}
+
+.pokemon-card{
+    padding: 10px;
+}
+
+.pokemon-card > a > img {
+    height: 150px;
+}
+
+.pokemon-card > a > img:hover {
+    background: radial-gradient(ellipse at top, #6471e6, transparent),
+    radial-gradient(ellipse at bottom, #b0b905, transparent);
+}
+
+.pokemon-button {
+    height: 100%;
+}
