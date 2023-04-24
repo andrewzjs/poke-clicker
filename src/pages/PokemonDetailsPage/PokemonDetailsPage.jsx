@@ -15,6 +15,10 @@ export default function({user}) {
         history('/')
     }
 
+    async function handleGoBack(){
+        history('/')
+    }
+
     // async function handleRemovePokemon(id){
     //     await pokemonAPI.deletePokemon(id)
     // }
@@ -131,8 +135,10 @@ export default function({user}) {
                         </tr>
                     </tbody>
                     </table>
-            {pokemon.user === user.id || <button id="details-delete" onClick={() => handleRemovePokemon(id)}  >Release Pokemon</button> }
-           
+            <div id="details-delete">
+            {pokemon.user === user.id || <button onClick={() => handleRemovePokemon(id)}  >Release Pokemon</button> }
+            <button onClick={() => handleGoBack()}>go back</button>
+            </div>
             {/* <NavLink to="/">
                 <button>go back</button>
             </NavLink> */}

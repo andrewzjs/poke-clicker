@@ -259,12 +259,15 @@ td {
 }
 
 #details-delete {
+    display: flex;
+    justify-content: space-between;
     grid-row: 7 /span 1;
     grid-column: 1/ span 5;
     margin: .5rem 11rem .5rem 11rem;
     background-color: red;
     color: white;
     border-radius: .2rem;
+    
 }
 
 .details-grid tr:hover {
