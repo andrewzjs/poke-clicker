@@ -1,0 +1,259 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    max-width: 600px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 0.1fr .8fr 1.5fr 1fr 1fr;
+    grid-template-rows: 0.1fr .2fr .9fr .3fr .5fr 1fr 1fr;
+    background-color: grey;
+    border-radius: .3rem;
+}
+
+.types-container {
+    grid-column: 3 / span 3;
+    grid-row: 2 / span 1 ;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 6rem;
+
+}
+.type-img {
+    height: .8rem;
+}
+
+#pokemon-name {
+    grid-column: 1 / span 6;
+    grid-row: 1 / span 1;
+    font-size: 2rem;
+}
+
+#pokemon-sprite {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 3;
+    height: 100%;
+    background-color: lightgrey;
+    margin-left: 1.2rem;
+    margin-top: 3rem;
+    border-radius: .3rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+#types-title {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+    text-align: left;
+
+
+}
+#type1 {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+}
+#type2 {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    margin-left: 4rem;
+}
+
+.misc-container {
+    display: grid;
+    grid-column: 4 / span 2;
+    grid-row: 3 / span 1;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #30A7D7;
+    border-radius: .3rem;
+    margin-right: .5rem;
+    margin-left: .3rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+#ability-name {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    color: white;
+    font-size: 90%;
+    padding-top: .2rem;
+}
+#ability-val {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    margin-bottom: .1rem;
+}
+#held-item-name {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+    color: white;
+    font-size: 90%;
+    padding-top: .2rem;
+}
+#held-item-val {
+    grid-column: 1 / span 1;
+    grid-row: 4 / span 1;
+    margin-bottom: .1rem;
+}
+#shiny-status-name {
+    grid-column: 1 / span 1;
+    grid-row: 5 / span 1;
+    color: white;
+    font-size: 90%;
+    padding-top: .2rem;
+}
+#shiny-status-val {
+    grid-column: 1 / span 1;
+    grid-row: 6 / span 1;
+    margin-bottom: .1rem;
+}
+#date-caught-name {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    color: white;
+    font-size: 90%;
+    padding-top: .2rem;
+}
+#date-caught-val {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    font-size: 90%;
+}
+#height-name {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+    color: white;
+    font-size: 90%;
+    padding-top: .2rem;
+}
+#height-val {
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1;
+}
+#weight-name {
+    grid-column: 2 / span 1;
+    grid-row: 5 / span 1;
+    color: white;
+    font-size: 90%;
+    padding-top: .2rem;
+}
+#weight-val {
+    grid-column: 2 / span 1;
+    grid-row: 6 / span 1;
+}
+
+.moves-container {
+    grid-column: 1 / span 5;
+    grid-row: 5 / span 2;
+    background-color: #30A7D7;
+    margin: 1.8rem;
+    border-radius: .3rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+#moves-container-label {
+    grid-column: 1 / span 5;
+    grid-row: 5 / span 2;
+    
+}
+ul, li {
+    list-style: none;
+}
+td {
+    height: 50%;
+}
+
+.stats-container {
+    grid-column: 1 / span 5;
+    grid-row: 6 / span 2;
+    background-color: #30A7D7;
+    margin: 1.8rem;
+    border-radius: .3rem;
+}
+#stats-container-label {
+    grid-column: 1 / span 3;
+    grid-row: 7 / span 2;
+    text-align: center;
+}
+
+.stats-container {
+    display: grid;
+    grid-column: 2 / span 2;
+    grid-row: 7 / span 2;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #30A7D7;
+    border-radius: .3rem;
+    margin-right: 1.8rem;
+    margin-left: 1.8rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+
+}
+#level-name {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    color: white;
+    font-size: 90%;
+    padding-top: .2rem;
+}
+#level-val {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    margin-bottom: .1rem;
+}
+#attack-name {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+    color: white;
+    font-size: 90%;
+    padding-top: .2rem;
+}
+#attack-val {
+    grid-column: 1 / span 1;
+    grid-row: 4 / span 1;
+    margin-bottom: .1rem;
+}
+#defense-name {
+    grid-column: 1 / span 1;
+    grid-row: 5 / span 1;
+    color: white;
+    font-size: 90%;
+    padding-top: .2rem;
+}
+#defense-val {
+    grid-column: 1 / span 1;
+    grid-row: 6 / span 1;
+    margin-bottom: .1rem;
+}
+#special-attack-name {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    color: white;
+    font-size: 90%;
+    padding-top: .2rem;
+}
+#special-attack-val {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+}
+#special-defense-name {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+    color: white;
+    font-size: 90%;
+    padding-top: .2rem;
+}
+#special-defense-val {
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1;
+}
+#speed-name {
+    grid-column: 2 / span 1;
+    grid-row: 5 / span 1;
+    color: white;
+    font-size: 90%;
+    padding-top: .2rem;
+}
+#speed-val {
+    grid-column: 2 / span 1;
+    grid-row: 6 / span 1;
+}

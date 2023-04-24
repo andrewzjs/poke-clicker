@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const statSchema = new Schema({
     level: {
         type: Number,
-        default: 1
+        default: 100
     },
     hp: {
         type: Number,

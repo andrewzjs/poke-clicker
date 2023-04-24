@@ -4,6 +4,8 @@ const pokemonStatsCtrl = require('../../controllers/api/pokemonStats')
 
 // route: api/pokemonStats
 router.get('/', pokemonStatsCtrl.index)
+// route: api/pokemonStats/:pokemonId
+router.get('/:id', pokemonStatsCtrl.show)
 // route: api/pokemonStats/create
 router.post('/create', pokemonStatsCtrl.create)
 

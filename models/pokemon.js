@@ -12,6 +12,14 @@ const moveSchema = new Schema({
         default: 0
     },
     moveType:  String,
+    pp: {
+        type: Number,
+        default: 10
+    },
+    damageClass: {
+        type: String,
+        default: "Physical"
+    }
 
 })
 
@@ -35,6 +43,18 @@ const pokemonSchema = new Schema({
     },
     ability: {
         type: String
+    },
+    height: {
+        type: Number,
+        default: 1
+    },
+    weight: {
+        type: Number,
+        default: 1
+    },
+    heldItem: {
+        type: String,
+        default: "oran berry"
     },
     moves: [moveSchema],
     user: { type: Schema.Types.ObjectId, ref: "User" }

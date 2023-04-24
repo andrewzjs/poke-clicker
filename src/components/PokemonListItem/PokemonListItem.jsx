@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 
 export default function PokemonListItem({pokemon, index, handleRemovePokemon}) {
     return (
@@ -11,7 +13,7 @@ export default function PokemonListItem({pokemon, index, handleRemovePokemon}) {
                     }}></td>
                 <td className="pokemon-name-table">{pokemon.name}</td>
                 <td>
-                  <button className="button-table" > Details </button>
+                  <Link to={`/pokemon/${pokemon._id}`} className="button-table" > Details </Link>
                   <button className="button-table" onClick={()=>handleRemovePokemon(pokemon._id)}> Release </button>
                 </td>
               </tr>
