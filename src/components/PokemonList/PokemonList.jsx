@@ -10,7 +10,7 @@ export default function PokemonList ({ pokemon, handleRemovePokemon }) {
         <div class="table-container">
           <table>
             <thead>
-              <th> Pokemon</th>
+              <th style={{fontWeight:"bold", fontSize: "20px"}}> Pokemon Team</th>
             </thead>
             <tbody>
             {pokemon.map((p, index) => (

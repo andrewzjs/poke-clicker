@@ -29,7 +29,7 @@ return (
       <tbody>
  {pokedex.map(pokemon => (
     <tr>
-      <td>#{pokemon.pokedexNum}<img src={pokemon.sprite}/></td>
+      <td>#{pokemon.pokedexNum}<img src={pokemon.sprite1}/></td>
       <td>{pokemon.name}</td>
       <td>
       {pokemon.pokemonType.length > 1 ? (

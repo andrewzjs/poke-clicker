@@ -1,0 +1,39 @@
+#details-button {
+    margin-left: .5rem;
+    display: inline-block;
+    padding: .3em;
+    text-decoration: none;
+    border: 2px solid #8FE3FF;
+    background-color: #8FE3FF;
+    border-radius: 6px;
+    color: black;
+    text-align: center;
+}
+#details-button:hover {
+    background-color: lightgreen;
+    border: 2px solid lightgreen;
+}
+
+#button-table {
+    margin-left: .2rem;
+    display: inline-block;
+    padding: .3em;
+    text-decoration: none;
+    border: 2px solid #8FE3FF;
+    background-color: #8FE3FF;
+    border-radius: 6px;
+    color: black;
+    font-weight: normal;
+    text-align: center;
+}
+#button-table:hover {
+    background-color: lightgreen;
+    border: 2px solid lightgreen;
+}
+#pokemon-name-table {
+    width: 80px;
+}
+
+tr:hover {
+    animation: updown 2s infinite;
+}
