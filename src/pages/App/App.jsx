@@ -21,7 +21,7 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
                 <Routes>
                     <Route path='/' element={ <Game /> } /> 
-                    <Route path='/pokemon/:id' element={ <PokemonDetailsPage /> } />
+                    <Route path='/pokemon/:id' element={ <PokemonDetailsPage user={user} /> } />
                     <Route path='/pokedex' element={ <PokedexPage /> } />
                     <Route path='/playerlist' element={ <PlayerListPage /> } />
                 </Routes>

@@ -7,7 +7,7 @@ export default function PokemonList ({ pokemon, handleRemovePokemon }) {
 
     return (
         <>
-        <div class="table-container">
+        <div className="table-container">
           <table>
             <thead>
               <th style={{fontWeight:"bold", fontSize: "20px"}}> Pokemon Team</th>
