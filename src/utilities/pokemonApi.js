@@ -13,3 +13,7 @@ export function getAll() {
 export function deletePokemon(pokeId){
     return sendRequest(`${BASE_URL}/delete/${pokeId}`, 'DELETE' )
 }
+
+export function getOne(id) {
+    return sendRequest(`${BASE_URL}/${id}`, 'GET')
+}

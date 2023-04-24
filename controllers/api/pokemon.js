@@ -6,6 +6,7 @@ module.exports = {
     index,
     create,
     delete: deletePokemon,
+    show,
 }
 
 async function create(req, res) {
@@ -30,10 +31,19 @@ async function index(req, res){
 
 async function deletePokemon(req, res){
     try {
-        const pokemonStats = PokemonStats.findOneAndDelete({pokemon: req.params.id })
+        await PokemonStats.findOneAndDelete({pokemon: req.params.id })
         await Pokemon.findByIdAndDelete(req.params.id)
         const remainingPokemon = await Pokemon.find({user: req.user._id})
         res.json(remainingPokemon)
+    } catch (err) {
+        res.status(400).json(err)
+    }
+}
+
+async function show(req, res){
+    try {
+        const pokemon = await Pokemon.findById(req.params.id)
+        res.json(pokemon)
     } catch (err) {
         res.status(400).json(err)
     }

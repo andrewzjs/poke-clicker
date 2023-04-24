@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import * as pokedexAPI from '../../utilities/pokedexApi'
 import './PokedexPage.css'
 
-export default function PokedexPage({}) {  
+export default function PokedexPage({}) {
   const [pokedex, setPokedex] = useState([])
   
   useEffect(function() {
@@ -15,9 +15,9 @@ export default function PokedexPage({}) {
 }, [])
 
 return (
-  <div class ="pokedex-container"> 
+  <div className ="pokedex-container">
   <h2 style={{color:"white", paddingTop:"1%"}}>Pokedex Entries</h2>
-    <table class="pokedex-index">
+    <table className="pokedex-index">
       <thead>
         <tr>
           <th>Sprite</th>

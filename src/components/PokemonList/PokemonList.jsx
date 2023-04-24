@@ -7,7 +7,7 @@ export default function PokemonList ({ pokemon, handleRemovePokemon }) {
 
     return (
         <>
-        <div class="table-container">
+        <div className="table-container">
           <table>
             <thead>
               <th> Pokemon</th>
