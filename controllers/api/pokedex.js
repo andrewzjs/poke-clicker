@@ -23,7 +23,6 @@ async function index(req, res){
         const user = await User.findById(req.user._id)
         const pokedexFromDatabase = user.pokedex
         const latestEntries = pokedexFromDatabase.slice(-20).reverse(); 
-        console.log("what!", latestEntries)
         res.json(latestEntries)
     } catch (err) {
         res.status(400).json(err)

@@ -1,5 +1,6 @@
 const User = require('../../models/user')
 const Pokemon = require('../../models/pokemon')
+const PokemonStats = require('../../models/stat')
 
 module.exports = {
     index,
@@ -29,6 +30,7 @@ async function index(req, res){
 
 async function deletePokemon(req, res){
     try {
+        const pokemonStats = PokemonStats.findOneAndDelete({pokemon: req.params.id })
         await Pokemon.findByIdAndDelete(req.params.id)
         const remainingPokemon = await Pokemon.find({user: req.user._id})
         res.json(remainingPokemon)
