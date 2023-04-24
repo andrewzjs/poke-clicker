@@ -20,7 +20,6 @@ const moveSchema = new Schema({
         type: String,
         default: "Physical"
     }
-
 })
 
 const pokemonSchema = new Schema({

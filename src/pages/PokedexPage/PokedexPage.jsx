@@ -8,7 +8,6 @@ export default function PokedexPage({}) {
   useEffect(function() {
     async function getPokedex(){
         const pokedex = await pokedexAPI.getAll()
-        console.log(pokedex)
         setPokedex(pokedex)
     }
     getPokedex()
