@@ -29,6 +29,7 @@
 }
 
 #pokemon-name {
+    text-transform: capitalize;
     grid-column: 1 / span 6;
     grid-row: 1 / span 1;
     font-size: 2rem;
@@ -263,10 +264,10 @@ td {
     justify-content: space-between;
     grid-row: 7 /span 1;
     grid-column: 1/ span 5;
-    margin: .5rem 11rem .5rem 11rem;
-    background-color: red;
     color: white;
     border-radius: .2rem;
+    justify-content: center;
+
     
 }
 
@@ -281,4 +282,35 @@ td {
 
 .stats-container th {
     border-bottom: none;
+}
+
+#release-button-details {
+    background-color: red;
+    border: 2px solid red;
+    color: white;
+    border-radius: .2rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+#release-button-details:hover {
+    background-color: pink;
+    border: 2px solid pink;
+    color: black;
+    border-radius: .2rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+#back-button-details {
+    background-color: green;
+    border: 2px solid green;
+    color: white;
+    border-radius: .2rem;
+    margin-bottom: 1rem;
+}
+#back-button-details:hover {
+    background-color: lightgreen;
+    border: 2px solid lightgreen;
+    color: black;
+    border-radius: .2rem;
+    margin-bottom: 1rem;
 }

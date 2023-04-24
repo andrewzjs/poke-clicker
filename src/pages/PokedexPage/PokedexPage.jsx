@@ -30,7 +30,7 @@ return (
  {pokedex.map(pokemon => (
     <tr>
       <td>#{pokemon.pokedexNum}<img src={pokemon.sprite1}/></td>
-      <td>{pokemon.name}</td>
+      <td id="pokedex-name">{pokemon.name}</td>
       <td>
       {pokemon.pokemonType.length > 1 ? (
   <><img className="type-img" src={`https://www.serebii.net/pokedex-bw/type/${pokemon.pokemonType[0]}.gif`} /> <br/> <img className="type-img" style={{marginTop:".5rem"}}src={`https://www.serebii.net/pokedex-bw/type/${pokemon.pokemonType[1]}.gif`} /></>

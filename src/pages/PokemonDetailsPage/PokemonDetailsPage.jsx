@@ -136,8 +136,8 @@ export default function({user}) {
                     </tbody>
                     </table>
             <div id="details-delete">
-            {pokemon.user === user.id || <button onClick={() => handleRemovePokemon(id)}  >Release Pokemon</button> }
-            <button onClick={() => handleGoBack()}>go back</button>
+            {pokemon.user === user.id || <button id="release-button-details" onClick={() => handleRemovePokemon(id)}  >Release Pokemon</button> }
+            <button id="back-button-details" onClick={() => handleGoBack()}>Back</button>
             </div>
             {/* <NavLink to="/">
                 <button>go back</button>
