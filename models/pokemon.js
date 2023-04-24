@@ -27,7 +27,10 @@ const pokemonSchema = new Schema({
     name: {
         type: String
     },
-    sprite: {
+    sprite1: {
+        type: String
+    },
+    sprite2: {
         type: String
     },
     pokemonType: {
@@ -52,9 +55,9 @@ const pokemonSchema = new Schema({
         type: Number,
         default: 1
     },
-    heldItem: {
+    gender: {
         type: String,
-        default: "oran berry"
+        default: "male"
     },
     moves: [moveSchema],
     user: { type: Schema.Types.ObjectId, ref: "User" }

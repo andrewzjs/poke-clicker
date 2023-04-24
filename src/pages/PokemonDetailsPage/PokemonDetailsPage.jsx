@@ -29,7 +29,7 @@ export default function() {
         <div className = "details-grid">
             <div id = "pokemon-name" > {pokemon.name} </div>
             <div id = "pokemon-num"></div>
-            <img id = "pokemon-sprite" src={pokemon.sprite}/>
+            <img id = "pokemon-sprite" src={pokemon.sprite2}/>
             <div className = "types-container">
             {pokemon && pokemon.pokemonType && pokemon.pokemonType.length > 0 ? (
         <>
@@ -55,8 +55,8 @@ export default function() {
                 <div id="height-val">{pokemon.height}</div>
                 <div id="weight-name">Weight</div>
                 <div id="weight-val">{pokemon.weight}</div>
-                <div id="held-item-name">Held Item</div>
-                <div id="held-item-val">{pokemon.heldItem}</div>
+                <div id="gender-name">Gender</div>
+                <div id="gender-val">{pokemon.gender === "male" ? <i style={{color: "aqua"}} class="fa fa-mars" aria-hidden="true"></i> : <i style={{color: "pink"}} class="fa fa-venus" aria-hidden="true"></i>}</div>
                 <div id="date-caught-name">Date Caught</div>
                 <div id="date-caught-val">{new Date(pokemon.dateCaught).toDateString()}</div>
                 <div id="shiny-status-name">Shiny Status</div>
@@ -101,21 +101,32 @@ export default function() {
                 )}
             </div>
             <div id="stats-container-label"><h4>Stats</h4></div>
-            <div className = "stats-container">
-                <div id="level-name">Level</div>
-                <div id="level-val">{pokemonStats.level}</div>
-                <div id="attack-name">Attack</div>
-                <div id="attack-val">{pokemonStats.attack}</div>
-                <div id="defense-name">Defense</div>
-                <div id="defense-val">{pokemonStats.defense}</div>
-                <div id="special-attack-name">Special Attack</div>
-                <div id="special-attack-val">{pokemonStats.specialAttack}</div>
-                <div id="special-defense-name">Special Defense</div>
-                <div id="special-defense-val">{pokemonStats.specialDefense}</div>
-                <div id="speed-name">Speed</div>
-                <div id="speed-val">{pokemonStats.speed}</div>
-            </div>
-            {/* <button onClick={handleRemovePokemon}>Release</button> */}
+            <table className = "stats-container">
+                    <thead>
+                        <tr>
+                        <th>Level</th>
+                        <th>HP</th>
+                        <th>Attack</th>
+                        <th>Defense</th>
+                        <th>Special Attack</th>
+                        <th>Special Defense</th>
+                        <th>Speed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{pokemonStats.level}</td>
+                            <td>{pokemonStats.hp}</td>
+                            <td>{pokemonStats.attack}</td>
+                            <td>{pokemonStats.defense}</td>
+                            <td>{pokemonStats.specialAttack}</td>
+                            <td>{pokemonStats.specialDefense}</td>
+                            <td>{pokemonStats.speed}</td>
+                        </tr>
+                    </tbody>
+                    </table>
+               
+            <button id="details-delete" >Release Pokemon</button>
             {/* <NavLink to="/">
                 <button>go back</button>
             </NavLink> */}

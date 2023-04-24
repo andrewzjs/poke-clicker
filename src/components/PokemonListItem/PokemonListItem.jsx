@@ -6,10 +6,9 @@ export default function PokemonListItem({pokemon, index, handleRemovePokemon}) {
         <div>
             <tr>
                 <td className="sprite-table" style={{
-                    backgroundImage: `url(${pokemon.sprite})`, 
+                    backgroundImage: `url(${pokemon.sprite1})`, 
                     backgroundRepeat: "no-repeat",
                     width: "40%",
-                    // animation: "updown 3s infinite",  
                     }}></td>
                 <td className="pokemon-name-table">{pokemon.name}</td>
                 <td>

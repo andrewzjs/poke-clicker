@@ -61,13 +61,13 @@ export default function GameBoard({ handleAddPokemon }) {
         try {
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${getRndInteger()}`)
             const name = response.data.name
-            const sprite  = response.data.sprites.front_default
+            const sprite1  = response.data.sprites.front_default
+            const sprite2  = response.data.sprites.other["official-artwork"].front_default
             const pokemonType=[]
             const ability = response.data.abilities[0].ability.name
             const pokedexNum = response.data.id
             const height = response.data.height
             const weight = response.data.weight
-            const heldItem = response.data.held_items[0].item.name
             
             const pokemonHPNum = response.data.stats[0].base_stat
             const pokemonAttackNum = response.data.stats[1].base_stat
@@ -107,19 +107,20 @@ export default function GameBoard({ handleAddPokemon }) {
             }
             const newPokemon = {
                 name: name,
-                sprite: sprite,
+                sprite1: sprite1,
+                sprite2: sprite2,
                 pokemonType: pokemonType,
                 ability: ability,
                 moves: moveDetails,
                 dateCaught: Date.now(),
                 height: height,
                 weight: weight,
-                heldItem: heldItem,
+
             }
             
             const newPokedexEntry = {
                 name: name,
-                sprite: sprite,
+                sprite1: sprite1,
                 pokemonType: pokemonType,
                 ability: ability,
                 dateCaught: Date.now(),
@@ -135,7 +136,7 @@ export default function GameBoard({ handleAddPokemon }) {
                 speed: pokemonSpeedNum,
                 
             }
-            setPokemonSprite(sprite)
+            setPokemonSprite(sprite1)
             setNewPokemon(newPokemon)
             setNewPokemonStats(newPokemonStats)
             setNewPokedexEntry(newPokedexEntry)
