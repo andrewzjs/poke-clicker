@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams, useNavigate } from "react-router-dom";
 import * as pokemonAPI from '../../utilities/pokemonApi'
 import * as pokemonStatsAPI from '../../utilities/pokemonStatsApi'
 import './PokemonDetailsPage.css'
@@ -8,9 +8,11 @@ export default function() {
     const [pokemon, setPokemon] = useState({})
     const [pokemonStats, setPokemonStats] = useState({})
     const { id } = useParams()
+    const history = useNavigate()
 
     async function handleRemovePokemon(id){
         await pokemonAPI.deletePokemon(id)
+        history('/')
     }
 
     // async function handleRemovePokemon(id){
@@ -130,7 +132,7 @@ export default function() {
                     </tbody>
                     </table>
                
-            <button id="details-delete" onClick={handleRemovePokemon} >Release Pokemon</button>
+            <button id="details-delete" onClick={() => handleRemovePokemon(id)}  >Release Pokemon</button>
             {/* <NavLink to="/">
                 <button>go back</button>
             </NavLink> */}

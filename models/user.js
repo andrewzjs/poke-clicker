@@ -9,7 +9,7 @@ const pokemonSchema = new Schema({
     name: {
         type: String
     },
-    sprite: {
+    sprite1: {
         type: String
     },
     pokemonType: {
