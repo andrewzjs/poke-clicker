@@ -52,6 +52,9 @@ td {
   height: 70px;
 }
 
+.table-container td {
+  padding: 1px;
+  }
 
 .pokemon-name-table {
     text-align: center;
