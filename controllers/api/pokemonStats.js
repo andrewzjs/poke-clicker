@@ -20,8 +20,8 @@ async function create(req, res) {
 
 async function index(req, res){
     try {
-        const pStats = await PokemonStats.find({pokemon: req.params.pokemonId})
-        res.json(pStats.reverse())
+        const pStats = await PokemonStats.find({pokemon: req.params.id})
+        res.json(pStats)
     } catch (err) {
         res.status(400).json(err)
     }

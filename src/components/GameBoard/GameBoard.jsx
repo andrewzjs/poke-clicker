@@ -11,7 +11,7 @@ export default function GameBoard({ handleAddPokemon }) {
     const [newPokedexEntry, setNewPokedexEntry] = useState(null)
 
     function getRndInteger() {
-        return Math.floor(Math.random() * 150 ) + 1;
+        return Math.floor(Math.random() * 450 ) + 1;
     }
 
     function randomBox(){
@@ -65,6 +65,9 @@ export default function GameBoard({ handleAddPokemon }) {
             const pokemonType=[]
             const ability = response.data.abilities[0].ability.name
             const pokedexNum = response.data.id
+            const height = response.data.height
+            const weight = response.data.weight
+            const heldItem = response.data.held_items[0].item.name
             
             const pokemonHPNum = response.data.stats[0].base_stat
             const pokemonAttackNum = response.data.stats[1].base_stat
@@ -98,6 +101,8 @@ export default function GameBoard({ handleAddPokemon }) {
                         power: movesResponse.data.power,
                         accuracy: movesResponse.data.accuracy,
                         moveType: movesResponse.data.type.name,
+                        pp: movesResponse.data.pp,
+                        damageClass: movesResponse.data.damage_class.name
                 })
             }
             const newPokemon = {
@@ -106,7 +111,10 @@ export default function GameBoard({ handleAddPokemon }) {
                 pokemonType: pokemonType,
                 ability: ability,
                 moves: moveDetails,
-                dateCaught: Date.now()
+                dateCaught: Date.now(),
+                height: height,
+                weight: weight,
+                heldItem: heldItem,
             }
             
             const newPokedexEntry = {
