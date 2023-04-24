@@ -9,6 +9,10 @@ export default function() {
     const [pokemonStats, setPokemonStats] = useState({})
     const { id } = useParams()
 
+    async function handleRemovePokemon(id){
+        await pokemonAPI.deletePokemon(id)
+    }
+
     // async function handleRemovePokemon(id){
     //     await pokemonAPI.deletePokemon(id)
     // }
@@ -126,7 +130,7 @@ export default function() {
                     </tbody>
                     </table>
                
-            <button id="details-delete" >Release Pokemon</button>
+            <button id="details-delete" onClick={handleRemovePokemon} >Release Pokemon</button>
             {/* <NavLink to="/">
                 <button>go back</button>
             </NavLink> */}
