@@ -34,6 +34,6 @@
     width: 80px;
 }
 
-tr:hover {
+.list-row:hover {
     animation: updown 2s infinite;
 }
