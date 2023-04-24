@@ -22,7 +22,7 @@ export default function NavBar({ user, setUser }) {
                     <li><NavLink to="/"><i className="fa fa-home nav-icon" aria-hidden="true"></i><span>Home</span></NavLink></li>
                     <li><NavLink to="/pokedex"><i className="fa fa-book nav-icon" aria-hidden="true"></i>Pokedex</NavLink></li>
                     <li><NavLink to="/playerlist"><i className="fa fa-users nav-icon" aria-hidden="true"></i>Player List</NavLink></li>
-                    <li><NavLink to="/"><i class="fa fa-user nav-icon" aria-hidden="true"></i><span>{user.name}</span></NavLink></li>
+                    <li><NavLink to="/"><i className="fa fa-user nav-icon" aria-hidden="true"></i><span>{user.name}</span></NavLink></li>
                     <li><NavLink to="" onClick={handleLogOut}><i className="fa fa-sign-out nav-icon" aria-hidden="true"></i>Log Out</NavLink></li>
                 </ul>
             </nav>

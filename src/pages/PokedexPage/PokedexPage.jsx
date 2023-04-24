@@ -14,9 +14,9 @@ export default function PokedexPage({}) {
 }, [])
 
 return (
-  <div class ="pokedex-container"> 
+  <div className ="pokedex-container"> 
   <h2 style={{color:"white", paddingTop:"1%"}}>Pokedex Entries</h2>
-    <table class="pokedex-index">
+    <table className="pokedex-index">
       <thead>
         <tr>
           <th>Sprite</th>

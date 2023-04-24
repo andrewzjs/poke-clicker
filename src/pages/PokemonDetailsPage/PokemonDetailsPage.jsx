@@ -4,7 +4,7 @@ import * as pokemonAPI from '../../utilities/pokemonApi'
 import * as pokemonStatsAPI from '../../utilities/pokemonStatsApi'
 import './PokemonDetailsPage.css'
 
-export default function() {
+export default function({user}) {
     const [pokemon, setPokemon] = useState({})
     const [pokemonStats, setPokemonStats] = useState({})
     const { id } = useParams()
@@ -12,6 +12,10 @@ export default function() {
 
     async function handleRemovePokemon(id){
         await pokemonAPI.deletePokemon(id)
+        history('/')
+    }
+
+    async function handleGoBack(){
         history('/')
     }
 
@@ -131,8 +135,10 @@ export default function() {
                         </tr>
                     </tbody>
                     </table>
-               
-            <button id="details-delete" onClick={() => handleRemovePokemon(id)}  >Release Pokemon</button>
+            <div id="details-delete">
+            {pokemon.user === user.id || <button onClick={() => handleRemovePokemon(id)}  >Release Pokemon</button> }
+            <button onClick={() => handleGoBack()}>go back</button>
+            </div>
             {/* <NavLink to="/">
                 <button>go back</button>
             </NavLink> */}
