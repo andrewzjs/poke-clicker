@@ -7,6 +7,7 @@ export default function GameBoard({ handleAddPokemon }) {
     const [box, setBox] = useState(null)
     const [pokemonSprite, setPokemonSprite] = useState(null)
     const [newPokemon, setNewPokemon] = useState(null)
+    const [newPokemonStats, setNewPokemonStats] = useState(null)
     const [newPokedexEntry, setNewPokedexEntry] = useState(null)
 
     function getRndInteger() {
@@ -36,10 +37,11 @@ export default function GameBoard({ handleAddPokemon }) {
                 setTimeout(() => {
                     setBox(null)
                     setPokemonSprite(null)
+                    setNewPokemonStats(null)
                     setNewPokedexEntry(null)
                     setNewPokemon(null)
+                    generatePokemon()
                 }, 2000)
-                generatePokemon()
             }, 2000)
         }
         generatePokemon()
@@ -50,7 +52,8 @@ export default function GameBoard({ handleAddPokemon }) {
         setPokemonSprite(null)
         setNewPokedexEntry(null)
         setNewPokemon(null)
-        handleAddPokemon(newPokemon, newPokedexEntry)
+        setNewPokemonStats(null)
+        handleAddPokemon(newPokemon, newPokedexEntry, newPokemonStats)
     }
 
     async function fetchRandPokemon() {
@@ -59,10 +62,17 @@ export default function GameBoard({ handleAddPokemon }) {
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${getRndInteger()}`)
             const name = response.data.name
             const sprite  = response.data.sprites.front_default
-            setPokemonSprite(sprite)
             const pokemonType=[]
             const ability = response.data.abilities[0].ability.name
             const pokedexNum = response.data.id
+            
+            const pokemonHPNum = response.data.stats[0].base_stat
+            const pokemonAttackNum = response.data.stats[1].base_stat
+            const pokemonDefenseNum = response.data.stats[2].base_stat
+            const pokemonSpecialAttackNum = response.data.stats[3].base_stat
+            const pokemonSpecialDefenseNum = response.data.stats[4].base_stat
+            const pokemonSpeedNum = response.data.stats[5].base_stat
+            
             const moveDetails = []
             if (response.data.types.length > 1) {
                 pokemonType.push(response.data.types[0].type.name)
@@ -70,7 +80,7 @@ export default function GameBoard({ handleAddPokemon }) {
             } else {
                 pokemonType.push(response.data.types[0].type.name)
             }
-
+            
             let i = 0
             let moveArray=[]
             while (i<4) {
@@ -83,11 +93,11 @@ export default function GameBoard({ handleAddPokemon }) {
             for (move of moveArray) {
                 const movesResponse = await axios.get(`${move.url}`)
                 moveDetails.push(
-                {
-                    move: movesResponse.data.name,
-                    power: movesResponse.data.power,
-                    accuracy: movesResponse.data.accuracy,
-                    moveType: movesResponse.data.type.name,
+                    {
+                        move: movesResponse.data.name,
+                        power: movesResponse.data.power,
+                        accuracy: movesResponse.data.accuracy,
+                        moveType: movesResponse.data.type.name,
                 })
             }
             const newPokemon = {
@@ -107,7 +117,19 @@ export default function GameBoard({ handleAddPokemon }) {
                 dateCaught: Date.now(),
                 pokedexNum: pokedexNum
             }
+            
+            const newPokemonStats = {
+                hp: pokemonHPNum,
+                attack: pokemonAttackNum,
+                defense: pokemonDefenseNum,
+                specialAttack: pokemonSpecialAttackNum,
+                specialDefense: pokemonSpecialDefenseNum,
+                speed: pokemonSpeedNum,
+                
+            }
+            setPokemonSprite(sprite)
             setNewPokemon(newPokemon)
+            setNewPokemonStats(newPokemonStats)
             setNewPokedexEntry(newPokedexEntry)
         } catch(err) {
             console.log(err)

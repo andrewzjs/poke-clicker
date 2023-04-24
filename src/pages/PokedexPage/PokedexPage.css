@@ -27,6 +27,10 @@
     background-color: rgba(245, 245, 245, 0.6);
 }
 
+.type-img {
+    scale: 140%;
+}
+
 /* .pokedex-index tr:hover td {
     animation: updown 2s infinite;
 } */

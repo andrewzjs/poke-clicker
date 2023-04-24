@@ -34,9 +34,9 @@ return (
       <td>{pokemon.name}</td>
       <td>
       {pokemon.pokemonType.length > 1 ? (
-  <><img src={`https://www.serebii.net/pokedex-bw/type/${pokemon.pokemonType[0]}.gif`} /> <img src={`https://www.serebii.net/pokedex-bw/type/${pokemon.pokemonType[1]}.gif`} /></>
+  <><img className="type-img" src={`https://www.serebii.net/pokedex-bw/type/${pokemon.pokemonType[0]}.gif`} /> <br/> <img className="type-img" style={{marginTop:".5rem"}}src={`https://www.serebii.net/pokedex-bw/type/${pokemon.pokemonType[1]}.gif`} /></>
 ) : (
-  <><img src={`https://www.serebii.net/pokedex-bw/type/${pokemon.pokemonType[0]}.gif`} /></>
+  <><img className="type-img" src={`https://www.serebii.net/pokedex-bw/type/${pokemon.pokemonType[0]}.gif`} /></>
 )}
       </td>
       <td>{pokemon.ability}</td>
