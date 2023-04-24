@@ -12,7 +12,7 @@ export default function() {
     useEffect(function() {
         async function getPokemon() {
             const pokemonFromDB = await pokemonAPI.getOne(id)
-            const pokemonStatsFromDB = await pokemonStatsAPI.getAll(id)
+            const pokemonStatsFromDB = await pokemonStatsAPI.getOne(id)
             setPokemon(pokemonFromDB)
             setPokemonStats(pokemonStatsFromDB)
         }
@@ -99,17 +99,17 @@ export default function() {
             <div id="stats-container-label"><h4>Stats</h4></div>
             <div className = "stats-container">
                 <div id="level-name">Level</div>
-                <div id="level-val">222</div>
+                <div id="level-val">{pokemonStats.level}</div>
                 <div id="attack-name">Attack</div>
-                <div id="attack-val">222</div>
+                <div id="attack-val">{pokemonStats.attack}</div>
                 <div id="defense-name">Defense</div>
-                <div id="defense-val">222</div>
+                <div id="defense-val">{pokemonStats.defense}</div>
                 <div id="special-attack-name">Special Attack</div>
-                <div id="special-attack-val">222</div>
+                <div id="special-attack-val">{pokemonStats.specialAttack}</div>
                 <div id="special-defense-name">Special Defense</div>
-                <div id="special-defense-val">222</div>
+                <div id="special-defense-val">{pokemonStats.specialDefense}</div>
                 <div id="speed-name">Speed</div>
-                <div id="speed-val">222</div>
+                <div id="speed-val">{pokemonStats.speed}</div>
             </div>
             {/* <NavLink to="/">
                 <button>go back</button>

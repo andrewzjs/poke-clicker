@@ -5,6 +5,7 @@ const PokemonStats = require('../../models/stat')
 module.exports = {
     index,
     create,
+    show
 }
 
 async function create(req, res) {
@@ -17,6 +18,16 @@ async function create(req, res) {
         res.status(400).json(err)
     }
 }
+
+async function show(req, res){
+    try {
+        const pStats = await PokemonStats.findOne({pokemon: req.params.id})
+        res.json(pStats)
+    } catch (err) {
+        res.status(400).json(err)
+    }
+}
+
 
 async function index(req, res){
     try {
