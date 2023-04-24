@@ -6,6 +6,7 @@ module.exports = {
     index,
     create,
     delete: deletePokemon,
+    show: showPokemon
 }
 
 async function create(req, res) {
@@ -14,6 +15,17 @@ async function create(req, res) {
         newPokemon.user = req.user._id
         const savePokemon = await Pokemon.create(newPokemon)
         res.json(savePokemon)
+    } catch(err) {
+        res.status(400).json(err)
+    }
+}
+
+async function showPokemon(req, res) {
+    try {
+        const p = await Pokemon.find({user: req.user._id})
+        const pStats = await PokemonStats.find({pokemon: req.pokemonId})
+        console.log(p, pStats)
+        res.json(p, pStats)
     } catch(err) {
         res.status(400).json(err)
     }
