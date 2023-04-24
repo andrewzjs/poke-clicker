@@ -9,6 +9,10 @@
     color: black;
     text-align: center;
 }
+#details-button:hover {
+    background-color: lightgreen;
+    border: 2px solid lightgreen;
+}
 
 #button-table {
     margin-left: .2rem;
@@ -22,6 +26,14 @@
     font-weight: normal;
     text-align: center;
 }
+#button-table:hover {
+    background-color: lightgreen;
+    border: 2px solid lightgreen;
+}
 #pokemon-name-table {
     width: 80px;
+}
+
+tr:hover {
+    animation: updown 2s infinite;
 }
