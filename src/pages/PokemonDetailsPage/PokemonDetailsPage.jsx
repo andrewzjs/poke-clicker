@@ -66,7 +66,7 @@ export default function() {
                 <div id="date-caught-name">Date Caught</div>
                 <div id="date-caught-val">{new Date(pokemon.dateCaught).toDateString()}</div>
                 <div id="shiny-status-name">Shiny Status</div>
-                <div id="shiny-status-val">{pokemon.isShiny ? pokemon.isShiny : "false"}</div>
+                <div id="shiny-status-val">{pokemon.isShiny ? pokemon.isShiny : "Not Shiny"}</div>
                 <div id="ability-name">Ability</div>
                 <div id="ability-val">{pokemon.ability}</div>
             </div>

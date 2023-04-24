@@ -3,6 +3,7 @@
     justify-content: center;
     margin-top: 1.5rem;
     max-width: 600px;
+
 }
 
 .details-grid {
@@ -264,4 +265,17 @@ td {
     background-color: red;
     color: white;
     border-radius: .2rem;
+}
+
+.details-grid tr:hover {
+    animation: none;
+}
+
+.details-grid th {
+    border-bottom: solid black;
+}
+
+
+.stats-container th {
+    border-bottom: none;
 }
