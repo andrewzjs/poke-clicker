@@ -24,7 +24,6 @@ export default function Game({ handleAddNewPokemon }) {
     async function handleRemovePokemon(pokeId){
         const remainingPokemon = await pokemonAPI.deletePokemon(pokeId)
         setPokemon(remainingPokemon)
-        console.log('remove pokemon', pokeId)
     }
 
     useEffect(function() {
