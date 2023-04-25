@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-<<<<<<< HEAD
 import { useParams, useNavigate } from "react-router-dom";
 import * as pokemonAPI from '../../utilities/pokemonApi'
 import * as pokemonStatsAPI from '../../utilities/pokemonStatsApi'
@@ -19,19 +18,10 @@ export default function PokemonDetailsPage({user}) {
     async function handleGoBack(){
         history(-1)
     }
-=======
-import { NavLink, useParams } from "react-router-dom";
-import * as pokemonAPI from '../../utilities/pokemonApi'
-
-export default function() {
-    const [pokemon, setPokemon] = useState({})
-    const { id } = useParams()
->>>>>>> 0d34acb344750c6cd870da9c6d5c3ff04cb06fba
 
     useEffect(function() {
         async function getPokemon() {
             const pokemonFromDB = await pokemonAPI.getOne(id)
-<<<<<<< HEAD
             const pokemonStatsFromDB = await pokemonStatsAPI.getOne(id)
             setPokemon(pokemonFromDB)
             setPokemonStats(pokemonStatsFromDB)
@@ -162,21 +152,3 @@ export default function() {
     )
 }
 
-=======
-            setPokemon(pokemonFromDB)
-        }
-        getPokemon()
-    }, [])
-
-
-    return(
-        <>
-            <h1>hello</h1>
-            {pokemon.name}
-            <NavLink to="/">
-                <button>go back</button>
-            </NavLink>
-        </>
-    )
-}
->>>>>>> 0d34acb344750c6cd870da9c6d5c3ff04cb06fba

@@ -4,7 +4,8 @@ const PokemonStats = require('../../models/stat')
 
 module.exports = {
     create,
-    show
+    show, 
+    index,
 }
 
 async function create(req, res) {

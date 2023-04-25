@@ -14,11 +14,7 @@ export default function PokedexPage({}) {
 }, [])
 
 return (
-<<<<<<< HEAD
   <div className ="pokedex-container"> 
-=======
-  <div className ="pokedex-container">
->>>>>>> 0d34acb344750c6cd870da9c6d5c3ff04cb06fba
   <h2 style={{color:"white", paddingTop:"1%"}}>Pokedex Entries</h2>
     <table className="pokedex-index">
       <thead>
