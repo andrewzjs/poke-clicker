@@ -2,10 +2,12 @@
   display: flex;
   justify-content: center;
   padding: 1.2rem;
+  
 }
 
 .gameboard-area {
   padding-right: 1%;
+  
 }
 
 .pokemonlist-area {

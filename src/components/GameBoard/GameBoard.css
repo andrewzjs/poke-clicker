@@ -1,5 +1,5 @@
 body {
-  background-color: #4A4056;
+  background-color: #484159;
 }
 
 @keyframes shake {
@@ -30,6 +30,8 @@ body {
   background-image: url(../../images/env-1.png) ;
   background-repeat: no-repeat;
   background-size: cover;
+  
+  
 }
 
 #board-sprite {
