@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import * as pokemonAPI from '../../utilities/pokemonApi'
 import PokemonListItem from "../PokemonListItem/PokemonListItem";
 import './PokemonList.css'
 

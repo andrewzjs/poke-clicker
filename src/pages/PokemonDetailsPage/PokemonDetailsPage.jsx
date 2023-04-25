@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { NavLink, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import * as pokemonAPI from '../../utilities/pokemonApi'
 import * as pokemonStatsAPI from '../../utilities/pokemonStatsApi'
 import './PokemonDetailsPage.css'
 
-export default function({user}) {
+export default function PokemonDetailsPage({user}) {
     const [pokemon, setPokemon] = useState({})
     const [pokemonStats, setPokemonStats] = useState({})
     const { id } = useParams()
@@ -16,12 +16,8 @@ export default function({user}) {
     }
 
     async function handleGoBack(){
-        history('/')
+        history(-1)
     }
-
-    // async function handleRemovePokemon(id){
-    //     await pokemonAPI.deletePokemon(id)
-    // }
 
     useEffect(function() {
         async function getPokemon() {
@@ -31,25 +27,27 @@ export default function({user}) {
             setPokemonStats(pokemonStatsFromDB)
         }
         getPokemon()
-    }, [])
+    }, [id])
 
 
     return(
         <div className = "container">
         <div className = "details-grid">
-            <div id = "pokemon-name" > {pokemon.name} </div>
-            <div id = "pokemon-num"></div>
-            <img id = "pokemon-sprite" src={pokemon.sprite2}/>
+            <div id="pokemon-name" > {pokemon.name} </div>
+            <div id="pokemon-num"></div>
+            <img id="pokemon-sprite" src={pokemon.sprite2} alt="" />
             <div className = "types-container">
             {pokemon && pokemon.pokemonType && pokemon.pokemonType.length > 0 ? (
         <>
             <img id="type1"
+            alt=""
             className="type-img"
             src={`https://www.serebii.net/pokedex-bw/type/${pokemon.pokemonType[0]}.gif`}
             />
             {pokemon.pokemonType.length > 1 && (
             <>
             <img id="type2"
+            alt=""
             className="type-img"
             src={`https://www.serebii.net/pokedex-bw/type/${pokemon.pokemonType[1]}.gif`}
             />
@@ -97,6 +95,7 @@ export default function({user}) {
                             <td><img id="type1"
                                 style={{scale:"110%"}}
                                 className="type-img"
+                                alt=""
                                 src={`https://www.serebii.net/pokedex-bw/type/${move.moveType}.gif`}
                             /></td>
                             <td>{move.damageClass}</td>
