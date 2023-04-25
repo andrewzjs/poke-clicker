@@ -17,21 +17,19 @@ export default function Game({ handleAddNewPokemon }) {
 
     async function handleAddNewPokemon(newPokemon, newPokedexEntry, newPokemonStats){
         const pokemonFromDatabase = await pokemonAPI.getAll();
-        if (pokemonFromDatabase.length > 10){
+        if (pokemonFromDatabase.length > 5){
             return alert("Your Pokemon Team is full. Please release a pokemon to continue.")
         } else {
             const pokemonFromDatabase = await pokemonAPI.createPokemon(newPokemon);
-            const pokemonStatsFromDatabase = await pokemonStatsAPI.createPokemonStats(newPokemonStats, pokemonFromDatabase._id)
-            setPokemon([...pokemon, pokemonFromDatabase].reverse())
+            await pokemonStatsAPI.createPokemonStats(newPokemonStats, pokemonFromDatabase._id)
+            setPokemon([...pokemon, pokemonFromDatabase])
             const pokemonFromPokedex = await pokedexAPI.createPokedexEntry(newPokedexEntry)
         }
     }
 
-    async function handleRemovePokemon(pokeId, pokeStatsId){
-        // const removeStats = await pokemonStatsAPI.deletePokemonStats(pokeStatsId)
+    async function handleRemovePokemon(pokeId){
         const remainingPokemon = await pokemonAPI.deletePokemon(pokeId)
         setPokemon(remainingPokemon)
-        console.log('remove pokemon', pokeId)
     }
 
     async function handleChangeBackground1(){
@@ -76,7 +74,7 @@ export default function Game({ handleAddNewPokemon }) {
                 handleAddPokemon={handleAddNewPokemon}/>
             </div>
             <div className="pokemonlist-area">
-                <PokemonList pokemon={ pokemon } setPokemon={ setPokemon } handleRemovePokemon={handleRemovePokemon} />
+                <PokemonList pokemon={ pokemon }  handleRemovePokemon={handleRemovePokemon} />
             </div>
         </div>
     )

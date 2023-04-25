@@ -3,7 +3,6 @@ const Pokemon = require('../../models/pokemon')
 const PokemonStats = require('../../models/stat')
 
 module.exports = {
-    index,
     create,
     show
 }

@@ -8,6 +8,8 @@ router.get('/', pokemonCtrl.index)
 router.get('/:id', pokemonCtrl.show)
 // route: api/pokemon/user/:userId
 router.get('/user/:uid', pokemonCtrl.userShow)
+// route: api/pokemon/:pokemonId
+router.get('/:id', pokemonCtrl.show)
 // route: api/pokemon/create
 router.post('/create', pokemonCtrl.create)
 // route: api/pokemon/delete/:pokemonId

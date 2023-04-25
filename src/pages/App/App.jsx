@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useParams } from 'react-router-dom';
 import { getUser } from '../../utilities/usersService';
 import PokedexPage from '../PokedexPage/PokedexPage';
 import AuthPage from '../AuthPage/AuthPage';
@@ -24,6 +24,7 @@ export default function App() {
                     <Route path='/pokemon/:id' element={ <PokemonDetailsPage user={user} /> } />
                     <Route path='/pokedex' element={ <PokedexPage /> } />
                     <Route path='/playerlist' element={ <PlayerListPage /> } />
+                    <Route path='/:id' element={ <PokemonDetailsPage /> } />
                 </Routes>
             </>
                 : 
