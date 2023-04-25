@@ -1,0 +1,16 @@
+#signup-button {
+    padding: .3em;
+    border: 2px solid #8FE3FF;
+    background-color: #8FE3FF;
+    border-radius: .3rem;
+    color: black;
+    font-weight: normal;
+}
+
+#signup-button:hover {
+    border: 2px solid lightgreen;
+    background-color: lightgreen;
+    border-radius: .3rem;
+    color: black;
+    font-weight: normal;
+}

@@ -19,7 +19,7 @@ export default function PlayerCard({ user }){
             <table className="player-card">
                 <thead className="user-name">
                     <tr>
-                        <th colspan="3"><h4>{user.name}'s Pokemon</h4></th>
+                        <th colspan="3"><h4 style={{textTransform:"capitalize"}}>{user.name}'s Pokemon</h4></th>
                     </tr>
                 </thead>
                 <tbody>

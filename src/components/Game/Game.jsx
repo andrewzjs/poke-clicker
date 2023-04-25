@@ -39,6 +39,12 @@ export default function Game({ handleAddNewPokemon }) {
     return (
         <div className="home-area">
             <div className="gameboard-area">
+                <div className="env-toggle">
+                    <button id="env1" >Grassy Terrain</button>
+                    <button id="env2" >Stratosphere</button>
+                    <button id="env3" >Distortion World</button>
+                    <button id="env4" >Sapphire Sea</button>
+                </div>
                 <GameBoard handleAddPokemon={handleAddNewPokemon}/>
             </div>
             <div className="pokemonlist-area">
