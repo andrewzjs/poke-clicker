@@ -1,0 +1,39 @@
+.AuthPage {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 2vmin;
+    flex-direction: column;
+  }
+  
+#auth-toggle {
+    margin-top: 4vmin;
+    padding: .3em;
+    border: 2px solid #8FE3FF;
+    background-color: #8FE3FF;
+    border-radius: .3rem;
+    color: black;
+    font-weight: normal;
+  }
+#auth-toggle:hover {
+    border: 2px solid lightgreen;
+    background-color: lightgreen;
+    border-radius: .3rem;
+    color: black;
+    font-weight: normal;
+  }
+
+  #logo-auth {
+    height: 6rem;
+    margin-top: .5rem;
+  }
+
+  .auth-el {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #auth-title {
+    margin-top: 2rem;
+    color: white;
+  }

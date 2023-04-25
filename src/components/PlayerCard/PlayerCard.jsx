@@ -21,6 +21,7 @@ export default function PlayerCard({ user }){
                 <div className="player-card">
                     <h4>{user.name.charAt(0).toUpperCase() + user.name.slice(1)}</h4>
                     <div className="image-track">
+
                         {pokemons.map((pokemon, idx) => (
                             <PokemonCard pokemon={pokemon} user={user} key={idx} />
                         ))}

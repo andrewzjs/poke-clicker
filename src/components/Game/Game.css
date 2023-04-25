@@ -10,5 +10,66 @@
 
 .pokemonlist-area {
   height: 500px;
-  padding-top: 6px;
 }
+
+.env-toggle {
+  display: flex;
+  justify-content: space-around;
+}
+#env1 {
+  border: 2px solid linear-gradient(to bottom, #2ECC71, #27AE60, #1E8449);
+  background: linear-gradient(to bottom, #2ECC71, #27AE60, #1E8449);
+  border-radius: 6px;
+  color: white;
+
+}
+#env1:hover {
+  border: .5px solid lightgreen;
+  background: lightgreen;
+  border-radius: 6px;
+  color: black;
+
+}
+#env2 {
+  border: 2px solid linear-gradient(to bottom, #87CEEB, #5DADE2, #3498DB);
+  background: linear-gradient(to bottom, #87CEEB, #5DADE2, #3498DB);
+  border-radius: 6px;
+  color: white;
+
+
+}
+#env2:hover {
+  border: .5px solid aqua;
+  background: aqua;
+  border-radius: 6px;
+  color: black;
+}
+#env3 {
+  border: 2px solid lnear-gradient(to bottom, #8B5FBF, #9B59B6, #A93226);
+  background: linear-gradient(to bottom, #8B5FBF, #9B59B6, #A93226);
+  border-radius: 6px;
+  color: white;
+
+}
+#env3:hover {
+  border: .5px solid magenta;
+  background: magenta;
+  border-radius: 6px;
+  color: black;
+
+}
+#env4 {
+  border: .5px solid #00629e;
+  background: linear-gradient(to bottom, #0b3d91, #004799, #00629e);
+  border-radius: 6px;
+  color: white;
+
+}
+#env4:hover {
+  border: .5px solid skyblue;
+  background: skyblue;
+  border-radius: 6px;
+  color: black;
+
+}
+

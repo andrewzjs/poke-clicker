@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { signUp } from '../../utilities/usersService'
+import './SignUpForm.css'
 
 export default class SignUpForm extends Component {
     state = {
@@ -23,17 +24,6 @@ export default class SignUpForm extends Component {
             delete formData.error
             delete formData.confirm
 
-            // different way to doing what is above
-            // const formData = {
-            //     name: this.state.name,
-            //     password: this.state.password,
-            //     email: this.state.email,
-            // }
-
-            // const { name, email, password } = this.state
-            // const formData = { name:name, email:email, password:password
-            //  }
-
             const user = await signUp(formData)
             this.props.setUser(user)
         } catch (err) {
@@ -47,15 +37,11 @@ export default class SignUpForm extends Component {
             <div>
             <div className="form-container">
                 <form autoComplete="off" onSubmit={this.handleSubmit}>
-                    <label>Name</label>
-                    <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
-                    <label>Email</label>
-                    <input type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
-                    <label>Password</label>
-                    <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
-                    <label>Confirm</label>
-                    <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
-                    <button type="submit" disabled={disable}>SIGN UP</button>
+                    <input placeholder='Name' type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
+                    <input placeholder='Email' type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
+                    <input placeholder='Password' type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
+                    <input placeholder='Confirm Password' type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
+                    <button id ="signup-button" type="submit" disabled={disable}>SIGN UP</button>
                 </form>
             </div>
             <p className="error-message">&nbsp;{this.state.error}</p>
