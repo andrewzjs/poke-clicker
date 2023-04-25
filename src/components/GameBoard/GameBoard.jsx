@@ -2,7 +2,8 @@ import './GameBoard.css';
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
-export default function GameBoard({ handleAddPokemon }) {
+
+export default function GameBoard({ handleAddPokemon, background, handleChangeBackground1,  handleChangeBackground2,  handleChangeBackground3,  handleChangeBackground4, }) {
     const characterSprite = "https://i.imgur.com/xKT0jKW.png"
     const [box, setBox] = useState(null)
     const [pokemonSprite, setPokemonSprite] = useState(null)
@@ -142,10 +143,9 @@ export default function GameBoard({ handleAddPokemon }) {
             console.log(err)
         }
     }
-
     return (
         <>
-            <div className = "board">
+            <div className = "board" style={{backgroundImage: `url(${background})`  }}>
                 <div id="board-sprite">
                     <img className="character-sprite" src={characterSprite} alt="" />
                 </div>
