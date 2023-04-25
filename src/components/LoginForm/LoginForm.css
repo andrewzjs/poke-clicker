@@ -1,0 +1,28 @@
+form {
+    background: grey;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container {
+    background: grey;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    margin-top: .9rem;
+}
+
+#login-button {
+    padding: .3em;
+    border: 2px solid #8FE3FF;
+    background-color: #8FE3FF;
+    border-radius: .3rem;
+    color: black;
+    font-weight: normal;
+}
+
+#login-button:hover {
+    border: 2px solid lightgreen;
+    background-color: lightgreen;
+    border-radius: .3rem;
+    color: black;
+    font-weight: normal;
+}
