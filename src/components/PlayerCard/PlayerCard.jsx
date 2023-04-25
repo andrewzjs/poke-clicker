@@ -12,24 +12,25 @@ export default function PlayerCard({ user }){
             setPokemons(usersPokemon)
         } 
         getPokemon()
-    }, [])
-    
+    }, [user._id])
+
     return (
-        <div className="table-div">
-            <table className="player-card">
-                <thead className="user-name">
-                    <tr>
-                        <th colspan="3"><h4 style={{textTransform:"capitalize"}}>{user.name}'s Pokemon</h4></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr className="">
+        <>
+            {pokemons.length?
+            <div className="card-container">
+                <div className="player-card">
+                    <h4>{user.name.charAt(0).toUpperCase() + user.name.slice(1)}</h4>
+                    <div className="image-track">
+
                         {pokemons.map((pokemon, idx) => (
-                        <PokemonCard pokemon={pokemon} />
-                    ))}
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                            <PokemonCard pokemon={pokemon} user={user} key={idx} />
+                        ))}
+                    </div>
+                </div>
+            </div>
+            :
+            <div></div>
+            }
+        </>
     )
 }
