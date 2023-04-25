@@ -3,7 +3,7 @@
 ## Overview
 PokéClicker is a Pokemon-themed app where players can catch and collect Pokemon to build their ultimate team. Users can see detailed information about their own Pokemon as well as other users' Pokemon, and access their Pokedex to see all the pokemon they have successfully captured to date. 
 
-PokéClicker is available to access [here]() (deployed via Heroku).
+PokéClicker is available to access [here](https://poke-clicker.herokuapp.com/) (deployed via Heroku).
 
 ## Screenshots
  ![Home Page](/src/images/sc-1.PNG?raw=true)
