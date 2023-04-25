@@ -31,6 +31,7 @@ export default function({user}) {
             setPokemonStats(pokemonStatsFromDB)
         }
         getPokemon()
+        console.log(pokemon.user)
     }, [])
 
 
@@ -135,10 +136,16 @@ export default function({user}) {
                         </tr>
                     </tbody>
                     </table>
-            <div id="details-delete">
-            {pokemon.user === user.id || <button id="release-button-details" onClick={() => handleRemovePokemon(id)}  >Release Pokemon</button> }
-            <button id="back-button-details" onClick={() => handleGoBack()}>Back</button>
-            </div>
+                    <div id="details-delete">
+  {pokemon.user === user._id ? (
+    <div>
+      <button id="release-button-details" onClick={() => handleRemovePokemon(id)}>Release Pokemon</button>
+      <button id="back-button-details" onClick={() => handleGoBack()}>Back</button>
+    </div>
+  ) : (
+    <button id="back-button-details" onClick={() => handleGoBack()}>Back</button>
+  )}
+</div>
             {/* <NavLink to="/">
                 <button>go back</button>
             </NavLink> */}
