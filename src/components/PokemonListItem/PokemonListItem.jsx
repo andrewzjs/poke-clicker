@@ -5,7 +5,7 @@ import './PokemonListItem.css'
 export default function PokemonListItem({pokemon, index, handleRemovePokemon}) {
     return (
         <div>
-            <tr>
+            <tr className="list-row">
                 <td><img src={pokemon.sprite1} /></td>
                 <td id="pokemon-name-table">{pokemon.name}</td>
                 <td>

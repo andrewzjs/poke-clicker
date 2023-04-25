@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import * as usersAPI from '../../utilities/usersApi'
 import PlayerCard from "../../components/PlayerCard/PlayerCard";
-
+import './PlayerListPage.css'
 
 export default function PlayerListPage() {  
     const [users, setUsers] = useState([])
@@ -14,17 +14,11 @@ export default function PlayerListPage() {
         getAllUsers()        
     }, [])
 
-
     return (
-    <>
-        <h1>
-            User:
-        </h1> 
-        <div>
+        <>
             {users.map((user, idx) => (
                 <PlayerCard user={user} key={idx} />
             ))}
-        </div>
-    </>
-);
+        </>
+    );
 }
