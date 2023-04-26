@@ -1,7 +1,9 @@
 # PokéClicker
 
 ## Overview
-PokéClicker is a Pokemon-themed app where players can catch and collect Pokemon to build their ultimate team. Users can see detailed information about their own Pokemon as well as other users' Pokemon, and access their Pokedex to see all the pokemon they have successfully captured to date. 
+PokéClicker is a Pokemon-themed app where players can catch and collect Pokemon to build their ultimate team. Users can see detailed information about their own Pokemon as well as other users' Pokemon, and access their Pokedex to see all the pokemon they have successfully captured to date.
+
+Developers: Andrew Santos and Michael Lucky
 
 PokéClicker is available to access [here](https://poke-clicker.herokuapp.com/) (deployed via Heroku).
 
@@ -15,10 +17,16 @@ PokéClicker is available to access [here](https://poke-clicker.herokuapp.com/) 
 3. Axios
 5. Vanilla CSS
 
+## Project Planning
+- [Trello Board]()
+- [Wireframe](https://www.figma.com/file/LirhjX6XmiHw6LwgCFQO3i/Project-4-wireframe?node-id=0-1&t=HRPDzkwgC45bAs9C-0)
+- [ERD](https://lucid.app/lucidchart/1842c7ae-01af-4c53-9434-4a79086ef7ab/edit?page=0_0#)
+
 ## Icebox 
 1. Battle system
 2. Level-up system 
 3. Sound effects
+4. Profile Page
 
 
 ## Attributions
