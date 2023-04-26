@@ -24,7 +24,7 @@ export default function Game() {
         } else {
             const pokemonFromDatabase = await pokemonAPI.createPokemon(newPokemon);
             await pokemonStatsAPI.createPokemonStats(newPokemonStats, pokemonFromDatabase._id)
-            setPokemon([...pokemon, pokemonFromDatabase])
+            setPokemon([pokemonFromDatabase, ...pokemon])
             await pokedexAPI.createPokedexEntry(newPokedexEntry)
         }
     }
