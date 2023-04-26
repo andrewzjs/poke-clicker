@@ -11,27 +11,27 @@ import img3 from '../../images/env-3.png'
 import img4 from '../../images/env-4.png'
 
 
-export default function Game({ handleAddNewPokemon }) {
+export default function Game() {
     const [pokemon, setPokemon] = useState([])
     const [background, setBackground] = useState(img1)
+    const [hide, setHide] = useState(false)
 
     async function handleAddNewPokemon(newPokemon, newPokedexEntry, newPokemonStats){
         const pokemonFromDatabase = await pokemonAPI.getAll();
-        if (pokemonFromDatabase.length > 10){
-            return alert("Your Pokemon Team is full. Please release a pokemon to continue.")
+        if (pokemonFromDatabase.length > 9){
+            if (hide===true)
+                setHide(false)
         } else {
             const pokemonFromDatabase = await pokemonAPI.createPokemon(newPokemon);
-            const pokemonStatsFromDatabase = await pokemonStatsAPI.createPokemonStats(newPokemonStats, pokemonFromDatabase._id)
-            setPokemon([...pokemon, pokemonFromDatabase].reverse())
-            const pokemonFromPokedex = await pokedexAPI.createPokedexEntry(newPokedexEntry)
+            await pokemonStatsAPI.createPokemonStats(newPokemonStats, pokemonFromDatabase._id)
+            setPokemon([...pokemon, pokemonFromDatabase])
+            await pokedexAPI.createPokedexEntry(newPokedexEntry)
         }
     }
 
-    async function handleRemovePokemon(pokeId, pokeStatsId){
-        // const removeStats = await pokemonStatsAPI.deletePokemonStats(pokeStatsId)
+    async function handleRemovePokemon(pokeId){
         const remainingPokemon = await pokemonAPI.deletePokemon(pokeId)
         setPokemon(remainingPokemon)
-        console.log('remove pokemon', pokeId)
     }
 
     async function handleChangeBackground1(){
@@ -67,16 +67,15 @@ export default function Game({ handleAddNewPokemon }) {
                     <button id="env3" onClick={() => handleChangeBackground3()}>Distortion World</button>
                     <button id="env4" onClick={() => handleChangeBackground4()}>Sapphire Sea</button>
                 </div>
-                <GameBoard 
-                background={ background } 
-                handleChangeBackground1={handleChangeBackground1}
-                handleChangeBackground2={handleChangeBackground2}
-                handleChangeBackground3={handleChangeBackground3}
-                handleChangeBackground4={handleChangeBackground4} 
-                handleAddPokemon={handleAddNewPokemon}/>
+                <GameBoard
+                background={ background }
+                handleAddPokemon={handleAddNewPokemon}
+                pokemon={ pokemon }
+                hide={hide}
+                setHide={setHide}/>
             </div>
             <div className="pokemonlist-area">
-                <PokemonList pokemon={ pokemon } setPokemon={ setPokemon } handleRemovePokemon={handleRemovePokemon} />
+                <PokemonList pokemon={ pokemon }  handleRemovePokemon={handleRemovePokemon} />
             </div>
         </div>
     )

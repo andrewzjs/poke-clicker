@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import * as pokedexAPI from '../../utilities/pokedexApi'
 import './PokedexPage.css'
 
-export default function PokedexPage({}) {  
+export default function PokedexPage({}) {
   const [pokedex, setPokedex] = useState([])
   
   useEffect(function() {

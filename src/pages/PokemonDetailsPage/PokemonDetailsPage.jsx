@@ -12,7 +12,7 @@ export default function PokemonDetailsPage({user}) {
 
     async function handleRemovePokemon(id){
         await pokemonAPI.deletePokemon(id)
-        history('/')
+        history(-1)
     }
 
     async function handleGoBack(){

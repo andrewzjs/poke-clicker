@@ -69,3 +69,38 @@ body {
 .wild-pokemon > img:hover {
   background-image: radial-gradient(ellipse, #130db8, transparent 60%);
 }
+
+.notification {
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+  z-index: 1;
+  animation-name: notification-animation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  background-size: contain;
+  background-repeat: no-repeat;
+  grid-row: 5;
+  grid-column: span 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+@keyframes notification-animation {
+  0%   {background-color: #c15252cc; top:5px;}
+  25%  {background-color: #c38d8dcc; top:0px;}
+  50%  {background-color: #ffffff; top:5px;}
+  75%  {background-color:#c38d8dcc; top:0px;}
+  100% {background-color:#c15252cc; top:5px;}
+}
+
+.hide-button{
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border-radius: 0.2rem;
+  margin-bottom: 1rem;
+  
+}

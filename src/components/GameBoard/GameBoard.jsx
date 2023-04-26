@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 
 
-export default function GameBoard({ handleAddPokemon, background, handleChangeBackground1,  handleChangeBackground2,  handleChangeBackground3,  handleChangeBackground4, }) {
+export default function GameBoard({ handleAddPokemon, background, pokemon, hide, setHide  }) {
     const characterSprite = "https://i.imgur.com/xKT0jKW.png"
     const [box, setBox] = useState(null)
     const [pokemonSprite, setPokemonSprite] = useState(null)
@@ -21,7 +21,7 @@ export default function GameBoard({ handleAddPokemon, background, handleChangeBa
 
     // initializes div and id of 24 boxes from top to bottom in the game grid
     const boxes = []
-    for(let i=0; i<24; i++ ) {
+    for(let i=0; i<19; i++ ) {
         if (box === i) {
             boxes.push(<div key={i} id={`box${i}`} className="sprite wild-pokemon"  onClick={() => handleClick()}><img src={pokemonSprite} alt="" /></div>)
         } else {
@@ -143,9 +143,18 @@ export default function GameBoard({ handleAddPokemon, background, handleChangeBa
             console.log(err)
         }
     }
+
+
+    function handleHide(){
+        setHide(!hide)
+    }
+
     return (
         <>
             <div className = "board" style={{backgroundImage: `url(${background})`  }}>
+            {(pokemon.length>9 && hide===false) && 
+                <div className="notification">Your Pokemon Team is full. Release a pokemon if you want to catch a new one! <span><button className="hide-button" onClick={() => handleHide()}>hide</button></span> </div>
+            }
                 <div id="board-sprite">
                     <img className="character-sprite" src={characterSprite} alt="" />
                 </div>

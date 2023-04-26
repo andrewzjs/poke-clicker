@@ -24,6 +24,7 @@ export default function App() {
                     <Route path='/pokemon/:id' element={ <PokemonDetailsPage user={user} /> } />
                     <Route path='/pokedex' element={ <PokedexPage /> } />
                     <Route path='/playerlist' element={ <PlayerListPage /> } />
+                    <Route path='/:id' element={ <PokemonDetailsPage /> } />
                 </Routes>
             </>
                 : 
